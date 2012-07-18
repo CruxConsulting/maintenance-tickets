@@ -28,6 +28,7 @@ end
 
 group :test do
   gem 'spork'
+  gem 'factory_girl_rails'
 end
 
 gem 'jquery-rails'
