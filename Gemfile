@@ -22,6 +22,11 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+
+end
+
+group :test do
+  gem 'spork'
 end
 
 gem 'jquery-rails'
