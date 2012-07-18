@@ -20,6 +20,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'pry-rails'
+end
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'guard-rspec'
