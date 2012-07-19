@@ -1,5 +1,7 @@
 ActiveAdmin.setup do |config|
 
+  config.before_filter :set_admin_locale
+
   # == Site Title
   #
   # Set the title that is displayed on the main layout
@@ -126,4 +128,8 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
+end
+
+def set_admin_locale
+  I18n.locale = :fr
 end
