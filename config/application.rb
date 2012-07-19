@@ -60,3 +60,5 @@ module AdminAsconseilEu
     config.assets.version = '1.0'
   end
 end
+
+I18n.locale = :fr
