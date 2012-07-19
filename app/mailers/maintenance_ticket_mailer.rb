@@ -1,8 +1,8 @@
 class MaintenanceTicketMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "support@asconseil.eu"
 
   def send_ticket_infos(ticket)
-    mail(:to => "bastien@cruxandco.com", :subject => "the mail subject").inspect
+    mail(:to => "support@asconseil.eu", :subject => "notification: Nouveau ticket de maintenance").inspect
   end
 
 end
