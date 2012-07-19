@@ -58,6 +58,18 @@ module AdminAsconseilEu
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # https://github.com/gregbell/active_admin/issues/999#issuecomment-4367560
+
+    config.after_initialize do |app|
+      if defined?(ActiveAdmin) and ActiveAdmin.application
+        # Try enforce reloading after app bootup
+        Rails.logger.debug("Reloading AA")
+        ActiveAdmin.application.unload!
+        I18n.reload!
+        self.reload_routes!
+      end
+    end
   end
 end
 
