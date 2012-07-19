@@ -1,0 +1,10 @@
+%p Bonjour,
+
+%p Un nouveau ticket de maintenance a été créé sur admin.asconseil.eu:
+
+%ul
+  %li= "Maintenu par: #{@ticket.maintained_by}"
+  %li= "Nom du client: #{@ticket.client_name}"
+  %li= "Email du client: #{@ticket.client_email}"
+  %li= "Commentaire: #{@ticket.comment}"
+  %li= "Etat: #{@ticket.state}"
