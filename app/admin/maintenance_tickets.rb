@@ -7,16 +7,18 @@ ActiveAdmin.register MaintenanceTicket do
 
       f.input :maintained_by, as: :select, collection:
       {
-        "Téléphone" => :phone,
-        "Prise de main" => :remote,
-        "Sur site" => "on-site"
+        "Téléphone" => "Téléphone",
+        "Prise de main" => "Prise de main",
+        "Sur site" => "Sur site"
         }, include_blank: false
 
       f.input :client_name
 
+      f.input :client_email
+
       f.input :comment
 
-      f.input :state, as: :select, collection: {"Ouvert" => :open, "Fermé" => :closed}, include_blank: false
+      f.input :state, as: :select, collection: {"Ouvert" => "Ouvert", "Fermé" => "Fermé"}, include_blank: false
 
     end
 
