@@ -1,0 +1,27 @@
+fr:
+
+  activerecord:
+    models:
+      maintenance_ticket:
+        one: Ticket de maintenance
+        other: Tickets de maintenance
+
+    attributes:
+      maintenance_ticket:
+        maintained_by: Type d'intervention
+        client_name: Nom du client
+        client_email: Email du client
+        comment: Commentaire
+        state: État
+        created_at: Créé le
+        updated_at: Mis à jour le
+
+  formtastic:
+    :yes: 'Oui'
+    :no: 'Non'
+    :create: 'Créer %{model}'
+    :update: 'Mettre à jour %{model}'
+    :submit: 'Valider %{model}'
+    :cancel: 'Annuler %{model}'
+    :reset: 'Réinitialiser %{model}'
+    :required: 'Requis'
