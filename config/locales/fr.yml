@@ -8,7 +8,7 @@ fr:
 
     attributes:
       maintenance_ticket:
-        maintained_by: Maintenu par
+        maintained_by: Type d'intervention
         client_name: Nom du client
         client_email: Email du client
         comment: Commentaire
