@@ -3,7 +3,7 @@ class MaintenanceTicketMailer < ActionMailer::Base
 
   def send_ticket_infos(ticket)
     @ticket = ticket
-    mail(:to => "support@asconseil.eu", :subject => "notification: Nouveau ticket de maintenance").inspect
+    mail(:to => "support@asconseil.eu", :subject => "notification: Nouveau ticket de maintenance")
   end
 
 end
