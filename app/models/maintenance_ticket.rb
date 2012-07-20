@@ -10,7 +10,7 @@ class MaintenanceTicket < ActiveRecord::Base
   ##################
 
   def notify
-    MaintenanceTicketMailer.send_ticket_infos(self).deliver
+    MaintenanceTicketMailer.send_ticket_infos(self).deliver if ENV["MAINTENANCE_TICKET_NOTIFICATION_EMAIL"].present?
   end
 
 end
