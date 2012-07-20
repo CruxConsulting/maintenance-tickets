@@ -10,7 +10,8 @@ class MaintenanceTicket < ActiveRecord::Base
   ##################
 
   def notify
-    MaintenanceTicketMailer.send_ticket_infos(self).deliver
+    recipients = [ENV["MAINTENANCE_TICKET_NOTIFICATION_EMAIL"], self.client_email].compact
+    MaintenanceTicketMailer.send_ticket_infos(self, recipients).deliver unless recipients.empty?
   end
 
 end
