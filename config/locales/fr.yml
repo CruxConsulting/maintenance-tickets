@@ -9,8 +9,6 @@ fr:
     attributes:
       maintenance_ticket:
         maintained_by: Type d'intervention
-        client_name: Nom du client
-        client_email: Email du client
         comment: Commentaire
         state: État
         created_at: Créé le
