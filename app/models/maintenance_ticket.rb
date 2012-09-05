@@ -10,6 +10,11 @@ class MaintenanceTicket < ActiveRecord::Base
 
   belongs_to :client
 
+  # Validations
+  #############
+
+  validates :client_id, presence: true
+
   # Callbacks
   ###########
 
