@@ -2,6 +2,16 @@
 
 ActiveAdmin.register MaintenanceTicket do
 
+  index do
+    column :client
+    column :maintained_by
+    column :comment
+    column :state
+    column :created_at
+    column :updated_at
+    default_actions
+  end
+
   form do |f|
     f.inputs do
 
