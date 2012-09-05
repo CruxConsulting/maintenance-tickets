@@ -15,6 +15,10 @@ fr:
         state: État
         created_at: Créé le
         updated_at: Mis à jour le
+      client:
+        name: Nom
+        created_at: Créé le
+        updated_at: Mis à jour le
 
   formtastic:
     :yes: 'Oui'
