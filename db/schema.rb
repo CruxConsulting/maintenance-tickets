@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905125043) do
+ActiveRecord::Schema.define(:version => 20120905130616) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string    "resource_id",   :null => false
@@ -54,13 +54,12 @@ ActiveRecord::Schema.define(:version => 20120905125043) do
   end
 
   create_table "maintenance_tickets", :force => true do |t|
-    t.string    "maintained_by"
-    t.string    "client_name"
-    t.string    "client_email"
-    t.text      "comment"
-    t.string    "state"
-    t.timestamp "created_at",    :null => false
-    t.timestamp "updated_at",    :null => false
+    t.string   "maintained_by"
+    t.text     "comment"
+    t.string   "state"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "client_id"
   end
 
 end
