@@ -3,7 +3,7 @@ class MaintenanceTicket < ActiveRecord::Base
   # Attributes
   ############
 
-  attr_accessible :comment, :maintained_by, :state, :client_id
+  attr_accessible :comment, :maintained_by, :state, :client_id, :description
 
   # Associations
   ##############

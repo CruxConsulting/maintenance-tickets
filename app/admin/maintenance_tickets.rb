@@ -5,10 +5,10 @@ ActiveAdmin.register MaintenanceTicket do
   index do
     column :client
     column :maintained_by
+    column :description
     column :comment
     column :state
     column :created_at
-    column :updated_at
     default_actions
   end
 
@@ -24,7 +24,9 @@ ActiveAdmin.register MaintenanceTicket do
 
       f.input :client
 
-      f.input :comment
+      f.input :description, :input_html => { :rows => 10 }
+
+      f.input :comment, :input_html => { :rows => 10 }
 
       f.input :state, as: :select, collection: {"Ouvert" => "Ouvert", "Fermé" => "Fermé"}, include_blank: false
 
