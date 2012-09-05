@@ -1,5 +1,9 @@
 class MaintenanceTicket < ActiveRecord::Base
-  attr_accessible :comment, :maintained_by, :state
+
+  # Attributes
+  ############
+
+  attr_accessible :comment, :maintained_by, :state, :client_id
 
   # Associations
   ##############

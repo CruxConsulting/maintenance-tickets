@@ -12,9 +12,7 @@ ActiveAdmin.register MaintenanceTicket do
         "Sur site" => "Sur site"
         }, include_blank: false
 
-      f.input :client_name
-
-      f.input :client_email
+      f.input :client
 
       f.input :comment
 
