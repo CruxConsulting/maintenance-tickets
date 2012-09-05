@@ -18,8 +18,11 @@ class MaintenanceTicket < ActiveRecord::Base
   # Instance methods
   ##################
 
+  delegate :name, :email, to: :client, prefix: true
+
   def notify
-    recipients = [ENV["MAINTENANCE_TICKET_NOTIFICATION_EMAIL"], self.client_email].compact
+    recipients = [
+      ENV["MAINTENANCE_TICKET_NOTIFICATION_EMAIL"], client_email].compact
     MaintenanceTicketMailer.send_ticket_infos(self, recipients).deliver unless recipients.empty?
   end
 
