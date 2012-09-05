@@ -2,6 +2,16 @@
 
 ActiveAdmin.register MaintenanceTicket do
 
+  index do
+    column :client
+    column :maintained_by
+    column :comment
+    column :state
+    column :created_at
+    column :updated_at
+    default_actions
+  end
+
   form do |f|
     f.inputs do
 
@@ -12,9 +22,7 @@ ActiveAdmin.register MaintenanceTicket do
         "Sur site" => "Sur site"
         }, include_blank: false
 
-      f.input :client_name
-
-      f.input :client_email
+      f.input :client
 
       f.input :comment
 

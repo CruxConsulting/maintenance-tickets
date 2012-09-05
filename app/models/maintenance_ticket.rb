@@ -1,5 +1,19 @@
 class MaintenanceTicket < ActiveRecord::Base
-  attr_accessible :client_email, :client_name, :comment, :maintained_by, :state
+
+  # Attributes
+  ############
+
+  attr_accessible :comment, :maintained_by, :state, :client_id
+
+  # Associations
+  ##############
+
+  belongs_to :client
+
+  # Validations
+  #############
+
+  validates :client_id, presence: true
 
   # Callbacks
   ###########
@@ -9,8 +23,11 @@ class MaintenanceTicket < ActiveRecord::Base
   # Instance methods
   ##################
 
+  delegate :name, :email, to: :client, prefix: true
+
   def notify
-    recipients = [ENV["MAINTENANCE_TICKET_NOTIFICATION_EMAIL"], self.client_email].compact
+    recipients = [
+      ENV["MAINTENANCE_TICKET_NOTIFICATION_EMAIL"], client_email].compact
     MaintenanceTicketMailer.send_ticket_infos(self, recipients).deliver unless recipients.empty?
   end
 
