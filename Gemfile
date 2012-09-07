@@ -11,6 +11,7 @@ gem 'haml'
 
 gem 'activeadmin'
 gem 'rails-i18n'
+gem "remote_table"
 
 # Gems used only for assets and not required
 # in production environments by default.
