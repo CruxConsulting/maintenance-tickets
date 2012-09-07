@@ -5,3 +5,13 @@
 require File.expand_path('../config/application', __FILE__)
 
 AdminAsconseilEu::Application.load_tasks
+
+desc "Loads the clients from the xls file in vendor/asconseil/clients.xls"
+task :load_clients => [:environment] do
+  uri = "File://" + (Rails.root + "vendor/asconseil/clients.xls").to_s
+
+  t = RemoteTable.new uri
+  t.rows.each do |r|
+    Client.find_or_create_by_name name: r["name"], email: r["email"]
+  end
+end
