@@ -7,6 +7,8 @@ fr:
         other: Tickets de maintenance
 
     attributes:
+      admin_user:
+        username: Login
       maintenance_ticket:
         maintained_by: Type d'intervention
         comment: Commentaire
