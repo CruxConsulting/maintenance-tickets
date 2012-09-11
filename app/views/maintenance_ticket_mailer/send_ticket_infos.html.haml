@@ -1,6 +1,9 @@
 %p Bonjour,
 
-%p Un nouveau ticket de maintenance a été créé:
+- if @ticket.created_at_changed?
+  %p Un nouveau ticket de maintenance a été créé:
+- else
+  %p Un ticket de maintenance a été modifié:
 
 %ul
   %li= "Maintenu par: #{@ticket.maintained_by}"
