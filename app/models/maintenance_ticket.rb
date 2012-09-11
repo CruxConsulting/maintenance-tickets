@@ -18,7 +18,7 @@ class MaintenanceTicket < ActiveRecord::Base
   # Callbacks
   ###########
 
-  after_create :notify
+  after_save :notify
 
   # Instance methods
   ##################
