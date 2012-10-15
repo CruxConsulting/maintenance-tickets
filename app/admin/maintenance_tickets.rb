@@ -12,6 +12,22 @@ ActiveAdmin.register MaintenanceTicket do
     default_actions
   end
 
+  show do
+    attributes_table do
+      row :maintained_by
+      row :comment do |ticket|
+        simple_format ticket.comment
+      end
+      row :state
+      row :created_at
+      row :updated_at
+      row :client
+      row :description do |ticket|
+        simple_format ticket.description
+      end
+    end
+  end
+
   form do |f|
     f.inputs do
 
