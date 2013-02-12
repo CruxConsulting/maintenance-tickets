@@ -28,6 +28,8 @@ class MaintenanceTicket < ActiveRecord::Base
   delegate :name, :email, to: :client, prefix: true
 
   def notify
+    return unless created_at_changed? || closed?
+
     recipients = [
       ENV["MAINTENANCE_TICKET_NOTIFICATION_EMAIL"], client_email].compact
     MaintenanceTicketMailer.send_ticket_infos(self, recipients).deliver unless recipients.empty?

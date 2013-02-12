@@ -17,10 +17,8 @@ class MaintenanceTicketMailer < ActionMailer::Base
   def send_ticket_subject
     status = if ticket_created?
       "crée"
-    elsif @ticket.state == "Fermé"
+    elsif @ticket.closed?
       "clôturé"
-    else
-      "modifié"
     end
 
     "Ticket numéro #{@ticket.id} #{status}"
