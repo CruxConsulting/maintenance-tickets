@@ -17,7 +17,6 @@ end
 # Development gems
 ##################
 group :development do
-  gem 'sqlite3'
   gem 'nifty-generators'
   gem "guard-spork"
   gem "guard-rspec", "~> 1.2.1"
@@ -35,6 +34,7 @@ group :test, :development do
 end
 
 group :test do
+  gem 'sqlite3'
   gem "factory_girl_rails"
   gem 'rb-fsevent', '~> 0.9.1'
 end
