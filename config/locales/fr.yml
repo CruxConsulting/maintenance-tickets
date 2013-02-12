@@ -16,6 +16,8 @@ fr:
         created_at: Créé le
         updated_at: Mis à jour le
         description: Demandes
+        assigned_to: Nom du technicien
+        duration: Durée de l'intervention
       client:
         name: Nom
         created_at: Créé le

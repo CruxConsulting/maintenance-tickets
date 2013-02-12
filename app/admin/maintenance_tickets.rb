@@ -28,6 +28,8 @@ ActiveAdmin.register MaintenanceTicket do
       row :description do |ticket|
         simple_format ticket.description
       end
+      row :assigned_to
+      row :duration
     end
   end
 
@@ -48,6 +50,10 @@ ActiveAdmin.register MaintenanceTicket do
       f.input :comment, :input_html => { :rows => 10 }
 
       f.input :state, as: :select, collection: {"Ouvert" => "Ouvert", "Fermé" => "Fermé"}, include_blank: false
+
+      f.input :assigned_to
+
+      f.input :duration
 
     end
 
