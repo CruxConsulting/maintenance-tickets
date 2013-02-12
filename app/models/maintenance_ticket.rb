@@ -5,7 +5,10 @@ class MaintenanceTicket < ActiveRecord::Base
   # Attributes
   ############
 
-  attr_accessible :comment, :maintained_by, :state, :client_id, :description, :assigned_to, :duration
+  attr_accessible(
+    :comment, :maintained_by, :state, :client_id, :description,
+    :assigned_to, :duration, :recipients
+  )
 
   # Associations
   ##############
@@ -30,9 +33,10 @@ class MaintenanceTicket < ActiveRecord::Base
   def notify
     return unless created_at_changed? || closed?
 
-    recipients = [
-      ENV["MAINTENANCE_TICKET_NOTIFICATION_EMAIL"], client_email].compact
-    MaintenanceTicketMailer.send_ticket_infos(self, recipients).deliver unless recipients.empty?
+    emails = recipients.split(',').map(&:strip) | [ENV["MAINTENANCE_TICKET_NOTIFICATION_EMAIL"], client_email].compact
+
+    MaintenanceTicketMailer.send_ticket_infos(self, emails)
+      .deliver unless emails.empty?
   end
 
   def opened?

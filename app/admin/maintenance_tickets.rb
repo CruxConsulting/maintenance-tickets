@@ -30,6 +30,7 @@ ActiveAdmin.register MaintenanceTicket do
       end
       row :assigned_to
       row :duration
+      row :recipients
     end
   end
 
@@ -54,6 +55,8 @@ ActiveAdmin.register MaintenanceTicket do
       f.input :assigned_to
 
       f.input :duration
+
+      f.input :recipients, hint: "Liste d'emails séparés par une virgule"
 
     end
 

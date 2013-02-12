@@ -18,6 +18,7 @@ fr:
         description: Demandes
         assigned_to: Nom du technicien
         duration: Durée de l'intervention
+        recipients: Destinataires
       client:
         name: Nom
         created_at: Créé le
