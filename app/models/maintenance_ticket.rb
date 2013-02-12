@@ -1,3 +1,5 @@
+# encoding : utf-8
+
 class MaintenanceTicket < ActiveRecord::Base
 
   # Attributes
@@ -29,6 +31,14 @@ class MaintenanceTicket < ActiveRecord::Base
     recipients = [
       ENV["MAINTENANCE_TICKET_NOTIFICATION_EMAIL"], client_email].compact
     MaintenanceTicketMailer.send_ticket_infos(self, recipients).deliver unless recipients.empty?
+  end
+
+  def opened?
+    state == "Ouvert"
+  end
+
+  def closed?
+    state == "Fermé"
   end
 
 end
