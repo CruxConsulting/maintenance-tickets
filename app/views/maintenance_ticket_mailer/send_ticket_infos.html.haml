@@ -1,21 +1,15 @@
 %p Bonjour,
 
-- if @ticket.created_at_changed?
-  %p Un nouveau ticket de maintenance a été créé:
-- else
-  %p Un ticket de maintenance a été modifié:
+%p
+  Vous trouverez ci-dessous un récapitulatif de l’intervention menée par As Conseil pour votre société.
 
 %ul
-  %li= "Maintenu par: #{@ticket.maintained_by}"
-  %li= "Nom du client: #{@ticket.client_name}"
-  %li= "Email du client: #{@ticket.client_email}"
   %li
-    = "Symptômes:"
+    = "Demande(s):"
     = simple_format @ticket.description
   %li
-    = "Commentaire:"
+    = "Solution apportée(s):"
     = simple_format @ticket.comment
-  %li= "Etat: #{@ticket.state}"
 
 %p
   = image_tag(root_url + image_path("carte-jerome.jpg"))
