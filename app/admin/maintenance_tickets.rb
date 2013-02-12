@@ -5,6 +5,7 @@ ActiveAdmin.register MaintenanceTicket do
   config.sort_order = "created_at_desc"
 
   index do
+    column :id
     column :client
     column :maintained_by
     column :description
