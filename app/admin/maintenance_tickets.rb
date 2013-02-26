@@ -2,7 +2,7 @@
 
 ActiveAdmin.register MaintenanceTicket do
 
-  config.sort_order = "created_at_desc"
+  config.sort_order = "state_desc"
 
   index do
     column :id
