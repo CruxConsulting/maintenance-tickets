@@ -4,6 +4,9 @@ ActiveAdmin.register MaintenanceTicket do
 
   config.sort_order = "state_desc"
 
+  # Views
+  #######
+
   index do
     column :id
     column :client
@@ -63,5 +66,17 @@ ActiveAdmin.register MaintenanceTicket do
     f.buttons
 
   end
+
+  # Controller
+  ############
+
+  controller do
+
+     def create
+       create! do |format|
+          format.html { redirect_to admin_maintenance_tickets_url }
+       end
+     end
+   end
 
 end
