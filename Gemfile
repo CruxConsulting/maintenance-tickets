@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+ruby "1.9.3"
+
+gem 'rails', '3.2.13'
 gem 'pg'
 gem 'haml'
 gem 'activeadmin'
 gem 'rails-i18n'
 gem "remote_table"
 gem 'jquery-rails'
+gem "newrelic_rpm"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -17,7 +20,6 @@ end
 # Development gems
 ##################
 group :development do
-  gem 'nifty-generators'
   gem "guard-spork"
   gem "guard-rspec", "~> 1.2.1"
 end
