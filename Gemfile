@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby "1.9.3"
+ruby "2.0.0"
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.15'
 gem 'pg'
 gem 'haml'
 gem 'activeadmin'
@@ -20,8 +20,6 @@ end
 # Development gems
 ##################
 group :development do
-  gem "guard-spork"
-  gem "guard-rspec", "~> 1.2.1"
 end
 
 # Test gems
@@ -29,14 +27,12 @@ end
 
 group :test, :development do
   gem "rspec-rails"
-  gem "sqlite3"
   gem 'pry-rails'
-  gem "pry-debugger"
+  gem "pry-byebug"
   gem 'awesome_print'
 end
 
 group :test do
-  gem 'sqlite3'
   gem "factory_girl_rails"
   gem 'rb-fsevent', '~> 0.9.1'
 end
