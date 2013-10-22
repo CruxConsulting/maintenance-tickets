@@ -3,7 +3,7 @@ class Client < ActiveRecord::Base
   # Attributes
   ############
 
-  attr_accessible :email, :name
+  attr_accessible :email, :name, :comment
 
   # Scopes
   ########

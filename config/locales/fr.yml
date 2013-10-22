@@ -21,6 +21,7 @@ fr:
         recipients: Destinataires
       client:
         name: Nom
+        comment: Commentaires
         created_at: Créé le
         updated_at: Mis à jour le
 
