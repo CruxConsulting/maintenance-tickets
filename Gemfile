@@ -11,6 +11,7 @@ gem "remote_table"
 gem 'jquery-rails'
 gem "newrelic_rpm"
 gem "unicorn"
+gem "rails_12factor"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
