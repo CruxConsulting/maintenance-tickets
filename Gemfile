@@ -10,6 +10,7 @@ gem 'rails-i18n'
 gem "remote_table"
 gem 'jquery-rails'
 gem "newrelic_rpm"
+gem "unicorn"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
