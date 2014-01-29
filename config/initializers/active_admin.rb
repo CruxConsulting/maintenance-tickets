@@ -1,5 +1,7 @@
 ActiveAdmin.setup do |config|
 
+  config.root_to = 'maintenance_tickets#index'
+
   config.before_filter :set_admin_locale
 
   # == Site Title
