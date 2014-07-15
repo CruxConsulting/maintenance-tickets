@@ -11,6 +11,7 @@ ActiveAdmin.register MaintenanceTicket do
     column :id
     column :client
     column :maintained_by
+    column :maintenance_date
     column :description
     column :comment
     column :state
@@ -21,6 +22,7 @@ ActiveAdmin.register MaintenanceTicket do
   show do
     attributes_table do
       row :maintained_by
+      row :maintenance_date
       row :comment do |ticket|
         simple_format ticket.comment
       end
@@ -46,6 +48,8 @@ ActiveAdmin.register MaintenanceTicket do
         "Prise de main" => "Prise de main",
         "Sur site" => "Sur site"
         }, include_blank: false
+
+      f.input :maintenance_date, as: :datepicker
 
       f.input :client
 

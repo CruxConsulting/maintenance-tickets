@@ -11,6 +11,7 @@ fr:
         username: Login
       maintenance_ticket:
         maintained_by: Type d'intervention
+        maintenance_date: Date d'intervention
         comment: Solutions Apportées
         state: État
         created_at: Créé le
