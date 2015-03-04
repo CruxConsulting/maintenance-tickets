@@ -18,6 +18,7 @@ GIT
 
 GEM
   remote: https://rubygems.org/
+  remote: https://Tx3zEy8nojpuh8JgTqUp@gem.fury.io/crux/
   specs:
     actionmailer (4.2.0)
       actionpack (= 4.2.0)
@@ -38,6 +39,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    activeadmin_select2 (0.0.4)
+      rails (~> 4.2.0)
     activejob (4.2.0)
       activesupport (= 4.2.0)
       globalid (>= 0.3.0)
@@ -62,6 +65,7 @@ GEM
     bourbon (4.2.1)
       sass (~> 3.4)
       thor
+    bower (0.0.2)
     builder (3.2.2)
     byebug (2.3.1)
       columnize (~> 0.3.6)
@@ -266,7 +270,9 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  activeadmin_select2
   awesome_print
+  bower
   coffee-rails (~> 4.1.0)
   devise
   haml

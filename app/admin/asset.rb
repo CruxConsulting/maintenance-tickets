@@ -1,5 +1,17 @@
 ActiveAdmin.register Asset do
 
+  client_select2_options = {
+    placeholder: "Choisir un client",
+    resourcesPath: "/admin/clients",
+    queryKey: "q[name_cont]",
+    order: "name_asc",
+    resultFormat: "data.name"
+  }
+
+  select2_filter :client_id, input_html: {data: {
+    select2_options: client_select2_options
+  }}
+
   controller do
     def scoped_collection
       end_of_association_chain.includes(:client)
@@ -30,7 +42,7 @@ ActiveAdmin.register Asset do
 
   form do |f|
     f.inputs do
-      f.input :client
+      f.input :client_id, as: :select2, select2_options: client_select2_options
       f.input :name
       f.input :description
       f.input :expiration_date

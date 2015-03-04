@@ -26,8 +26,8 @@ ActiveAdmin.register Client do
 
     panel "Objets" do
       table_for resource.assets do
-        column :name
-        column :expiration_date do |asset|
+        column 'Nom', :name
+        column "Date d'expiration", :expiration_date do |asset|
           l asset.expiration_date, format: :long
         end
       end

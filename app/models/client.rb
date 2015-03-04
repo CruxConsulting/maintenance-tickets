@@ -10,5 +10,6 @@ class Client < ActiveRecord::Base
   ##############
 
   has_many :maintenance_tickets
+  has_many :assets
 
 end
