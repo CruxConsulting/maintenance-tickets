@@ -13,4 +13,9 @@ class Asset < ActiveRecord::Base
     where(t[:expiration_date].lt Time.zone.today + 30)
   }
 
+  # Instance methods
+  ##################
+
+  delegate :name, to: :client, prefix: true
+
 end
