@@ -5,6 +5,9 @@ fr:
       maintenance_ticket:
         one: Ticket de maintenance
         other: Tickets de maintenance
+      asset:
+        one: Objet
+        other: Objets
 
     attributes:
       admin_user:
@@ -25,6 +28,10 @@ fr:
         comment: Commentaires
         created_at: Créé le
         updated_at: Mis à jour le
+        assets: "Objets"
+      asset:
+        name: Nom
+        expiration_date: "Date d'expiration"
 
   formtastic:
     :yes: 'Oui'
