@@ -2,10 +2,11 @@ source 'https://rubygems.org'
 
 ruby "2.1.4"
 
-gem 'rails', '3.2.15'
+gem 'rails', '3.2.21'
 gem 'pg'
 gem 'haml'
-gem 'activeadmin'
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
 gem 'rails-i18n'
 gem "remote_table"
 gem 'jquery-rails'
