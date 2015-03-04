@@ -18,24 +18,13 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-# Development gems
-##################
-group :development do
-end
-
 # Test gems
 ###########
 
 group :test, :development do
-  gem "rspec-rails"
   gem 'pry-rails'
   gem "pry-byebug"
   gem 'awesome_print'
-end
-
-group :test do
-  gem "factory_girl_rails"
-  gem 'rb-fsevent', '~> 0.9.1'
 end
 
 # Production gems
