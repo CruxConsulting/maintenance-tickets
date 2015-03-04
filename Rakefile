@@ -15,3 +15,8 @@ task :load_clients => [:environment] do
     Client.find_or_create_by_name name: r["name"], email: r["email"]
   end
 end
+
+desc "Send reminder email when assets are about to expire"
+task :send_assets_expire_soone_reminder => [:environment] do |task, args|
+  AdminMailer.assets_expire_soon.deliver_now
+end
