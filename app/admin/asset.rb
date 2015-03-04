@@ -12,6 +12,8 @@ ActiveAdmin.register Asset do
     select2_options: client_select2_options
   }}
 
+  filter :name
+
   controller do
     def scoped_collection
       end_of_association_chain.includes(:client)
