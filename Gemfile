@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.0.0"
+ruby "2.1.4"
 
 gem 'rails', '3.2.15'
 gem 'pg'
@@ -10,7 +10,7 @@ gem 'rails-i18n'
 gem "remote_table"
 gem 'jquery-rails'
 gem "newrelic_rpm"
-gem "unicorn"
+gem 'passenger', '~> 5.0.0.rc2'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
