@@ -12,7 +12,7 @@ ActiveAdmin.register Client do
   index do
     column :name
     column :email
-    default_actions
+    actions
   end
 
   show do
@@ -21,6 +21,15 @@ ActiveAdmin.register Client do
       row :email
       row :comment do |client|
         simple_format client.comment
+      end
+    end
+
+    panel "Objets" do
+      table_for resource.assets do
+        column :name
+        column :expiration_date do |asset|
+          l asset.expiration_date, format: :long
+        end
       end
     end
   end

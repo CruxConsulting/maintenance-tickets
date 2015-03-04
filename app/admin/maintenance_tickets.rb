@@ -16,7 +16,7 @@ ActiveAdmin.register MaintenanceTicket do
     column :comment
     column :state
     column :created_at
-    default_actions
+    actions
   end
 
   show do
