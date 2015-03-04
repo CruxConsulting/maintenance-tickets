@@ -1,6 +1,7 @@
 1.1.0.beta1
 -----------
 
+- new send_assets_expire_soone_reminder rake task
 - use AA_select2
 - add assets
 - ruby 2.2
