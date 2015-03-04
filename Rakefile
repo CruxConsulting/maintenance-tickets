@@ -17,6 +17,6 @@ task :load_clients => [:environment] do
 end
 
 desc "Send reminder email when assets are about to expire"
-task :send_assets_expire_soone_reminder => [:environment] do |task, args|
+task :send_assets_expire_soon_reminder => [:environment] do |task, args|
   AdminMailer.assets_expire_soon.deliver_now
 end
