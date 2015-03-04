@@ -4,6 +4,8 @@ ActiveAdmin.register Client do
   filter :email
   filter :comment
 
+  config.sort_order = "name_asc"
+
   # Views
   #######
 

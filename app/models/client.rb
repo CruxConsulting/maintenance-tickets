@@ -5,11 +5,6 @@ class Client < ActiveRecord::Base
 
   attr_accessible :email, :name, :comment
 
-  # Scopes
-  ########
-
-  default_scope order(:name)
-
   # Validations
   #############
 
