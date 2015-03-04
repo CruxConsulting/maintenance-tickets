@@ -25,6 +25,7 @@ group :test, :development do
   gem 'pry-rails'
   gem "pry-byebug"
   gem 'awesome_print'
+  gem 'spring'
 end
 
 # Production gems
