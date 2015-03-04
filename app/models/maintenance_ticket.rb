@@ -26,7 +26,7 @@ class MaintenanceTicket < ActiveRecord::Base
     emails = recipients.split(',').map(&:strip) | [ENV["MAINTENANCE_TICKET_NOTIFICATION_EMAIL"], client_email].compact
 
     MaintenanceTicketMailer.send_ticket_infos(self, emails)
-      .deliver unless emails.empty?
+      .deliver_now unless emails.empty?
   end
 
   def opened?
