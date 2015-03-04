@@ -4,6 +4,14 @@ ActiveAdmin.register MaintenanceTicket do
 
   config.sort_order = "state_desc"
 
+  client_select2_options = {
+    placeholder: "Choisir un client",
+    resourcesPath: "/admin/clients",
+    queryKey: "q[name_cont]",
+    order: "name_asc",
+    resultFormat: "data.name"
+  }
+
   # Views
   #######
 
@@ -51,7 +59,7 @@ ActiveAdmin.register MaintenanceTicket do
 
       f.input :maintenance_date, as: :datepicker
 
-      f.input :client
+      f.input :client, as: :select2, select2_options: client_select2_options
 
       f.input :description, :input_html => { :rows => 10 }
 
@@ -67,7 +75,7 @@ ActiveAdmin.register MaintenanceTicket do
 
     end
 
-    f.buttons
+    f.actions
 
   end
 
