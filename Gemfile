@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby "2.1.4"
+ruby "2.2.0"
 
-gem 'rails', '3.2.21'
+gem 'rails', '4.2.0'
 gem 'pg'
 gem 'haml'
 gem 'devise'
@@ -12,12 +12,9 @@ gem "remote_table"
 gem 'jquery-rails'
 gem "newrelic_rpm"
 gem 'passenger', '~> 5.0.0.rc2'
-
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
 
 # Test gems
 ###########

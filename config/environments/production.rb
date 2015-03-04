@@ -67,6 +67,8 @@ AdminAsconseilEu::Application.configure do
 
   config.action_mailer.default_url_options = { :host => "admin-asconseil-eu.herokuapp.com" }
 
+  config.eager_load = true
+
 end
 
 ActionMailer::Base.smtp_settings = {

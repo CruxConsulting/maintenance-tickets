@@ -1,14 +1,4 @@
-# encoding : utf-8
-
 class MaintenanceTicket < ActiveRecord::Base
-
-  # Attributes
-  ############
-
-  attr_accessible(
-    :comment, :maintained_by, :state, :client_id, :description,
-    :assigned_to, :duration, :recipients, :maintenance_date
-  )
 
   # Associations
   ##############

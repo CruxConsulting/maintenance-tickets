@@ -1,10 +1,5 @@
 class Client < ActiveRecord::Base
 
-  # Attributes
-  ############
-
-  attr_accessible :email, :name, :comment
-
   # Validations
   #############
 
