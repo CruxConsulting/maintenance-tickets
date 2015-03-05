@@ -7,10 +7,14 @@ class Asset < ActiveRecord::Base
   # Class methods
   ###############
 
-  # expire in 30 days or less
+  # expire in ENV["ASSET_EXPIRE_SOON_DAYS_DELAY"] days or less
   scope :expire_soon, -> {
     t = arel_table
-    where(t[:expiration_date].lt Time.zone.today + 30)
+    where(
+      t[:expiration_date].lt(
+        Time.zone.today + ENV["ASSET_EXPIRE_SOON_DAYS_DELAY"].to_i
+      )
+    )
   }
 
   # Instance methods
