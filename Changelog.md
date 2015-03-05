@@ -1,6 +1,11 @@
+1.1.0.beta2
+-----------
+
 - remove qa env
 - remove serve_static_assets config
 - set log_level to :info in prod
+- only send the assets expire_soon reminder if there are assets that will expire soon
+
 1.1.0.beta1
 -----------
 
