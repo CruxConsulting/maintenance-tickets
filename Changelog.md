@@ -1,4 +1,5 @@
 - remove qa env
+- remove serve_static_assets config
 1.1.0.beta1
 -----------
 
