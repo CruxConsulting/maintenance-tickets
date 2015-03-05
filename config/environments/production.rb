@@ -65,6 +65,7 @@ AdminAsconseilEu::Application.configure do
   config.action_mailer.default_url_options = { :host => "admin.asconseil.eu" }
 
   config.eager_load = true
+  config.log_level = :info
 
 end
 

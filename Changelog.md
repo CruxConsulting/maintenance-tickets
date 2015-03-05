@@ -1,5 +1,6 @@
 - remove qa env
 - remove serve_static_assets config
+- set log_level to :info in prod
 1.1.0.beta1
 -----------
 
