@@ -1,3 +1,4 @@
+- remove qa env
 1.1.0.beta1
 -----------
 
