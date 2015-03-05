@@ -41,7 +41,7 @@ ActiveAdmin.register Client do
       f.input :comment, :input_html => { :rows => 10 }
     end
 
-    f.buttons
+    f.actions
   end
 
 end
