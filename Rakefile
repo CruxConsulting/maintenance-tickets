@@ -16,9 +16,9 @@ task :load_clients => [:environment] do
   end
 end
 
-desc "Send reminder email when assets are about to expire"
+desc "Send reminder email every monday when assets are about to expire"
 task :send_assets_expire_soon_reminder => [:environment] do |task, args|
-  if Asset.expire_soon.count > 0
+  if Time.zone.today.monday? && (Asset.expire_soon.count > 0)
     AdminMailer.assets_expire_soon.deliver_now
   end
 end

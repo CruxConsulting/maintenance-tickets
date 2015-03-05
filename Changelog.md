@@ -1,5 +1,10 @@
-1.1.0.beta3
------------
+1.1.1
+-----
+
+- send_assets_expire_soon_reminder operates every monday
+
+1.1.0
+-----
 
 - fix new client form
 
