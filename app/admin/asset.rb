@@ -23,6 +23,9 @@ ActiveAdmin.register Asset do
   index do
     column :client
     column :name
+    column :description do |resource|
+      simple_format resource.description
+    end
     column :expiration_date do |resource|
       l resource.expiration_date, format: :long
     end

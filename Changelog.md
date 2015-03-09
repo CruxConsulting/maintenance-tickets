@@ -1,6 +1,7 @@
 1.1.2
 -----
 
+- add asset desc in client show and assets index
 - fix maintenance ticket creation bug (remove select2 input)
 
 1.1.1
