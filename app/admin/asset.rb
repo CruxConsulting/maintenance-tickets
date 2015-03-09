@@ -8,10 +8,7 @@ ActiveAdmin.register Asset do
     resultFormat: "data.name"
   }
 
-  select2_filter :client_id, input_html: {data: {
-    select2_options: client_select2_options
-  }}
-
+  filter :client
   filter :name
 
   controller do
@@ -47,7 +44,7 @@ ActiveAdmin.register Asset do
 
   form do |f|
     f.inputs do
-      f.input :client_id, as: :select2, select2_options: client_select2_options
+      f.input :client
       f.input :name
       f.input :description
       f.input :expiration_date

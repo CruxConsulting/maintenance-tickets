@@ -1,6 +1,7 @@
 1.1.2
 -----
 
+- remove client_id select2 in assets filter and input
 - add asset desc in client show and assets index
 - fix maintenance ticket creation bug (remove select2 input)
 
