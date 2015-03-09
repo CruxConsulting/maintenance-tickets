@@ -1,3 +1,8 @@
+1.1.2
+-----
+
+- fix maintenance ticket creation bug (remove select2 input)
+
 1.1.1
 -----
 

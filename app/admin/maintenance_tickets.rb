@@ -59,7 +59,7 @@ ActiveAdmin.register MaintenanceTicket do
 
       f.input :maintenance_date, as: :datepicker
 
-      f.input :client, as: :select2, select2_options: client_select2_options
+      f.input :client
 
       f.input :description, :input_html => { :rows => 10 }
 
