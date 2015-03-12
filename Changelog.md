@@ -1,3 +1,8 @@
+1.1.3
+-----
+
+- back to default scope order(:name) for clients
+
 1.1.2
 -----
 
