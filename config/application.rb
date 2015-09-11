@@ -64,6 +64,8 @@ module AdminAsconseilEu
         self.reload_routes!
       end
     end
+
+    config.action_mailer.delivery_method = :smtp
   end
 end
 
