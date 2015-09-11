@@ -21,7 +21,7 @@ class MaintenanceTicketMailer < ActionMailer::Base
                'clôturé'
              end
 
-    "Ticket numéro #{@ticket.id} #{status}"
+    "Ticket numéro #{@ticket.id} #{status} - #{@ticket.client_name}"
   end
 
 end

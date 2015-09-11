@@ -1,7 +1,8 @@
-%p Bonjour,
+%p Bonjour #{@ticket.client_name},
 
 %p
-  Vous trouverez ci-dessous un récapitulatif de l’intervention menée par As Conseil pour votre société.
+  Vous trouverez ci-dessous un récapitulatif de l’intervention menée par
+  #{@ticket.assigned_to} le #{l @ticket.maintenance_date}.
 
 %ul
   %li
