@@ -1,11 +1,11 @@
 # encoding: utf-8
 
 class MaintenanceTicketMailer < ActionMailer::Base
-  default from: "support@asconseil.eu"
+  default from: 'support@asconseil.eu'
 
   def send_ticket_infos(ticket, recipients)
     @ticket = ticket
-    mail to: recipients, :subject => send_ticket_subject
+    mail to: recipients, subject: send_ticket_subject
   end
 
   private
@@ -16,10 +16,10 @@ class MaintenanceTicketMailer < ActionMailer::Base
 
   def send_ticket_subject
     status = if ticket_created?
-      "crée"
-    elsif @ticket.closed?
-      "clôturé"
-    end
+               'crée'
+             elsif @ticket.closed?
+               'clôturé'
+             end
 
     "Ticket numéro #{@ticket.id} #{status}"
   end

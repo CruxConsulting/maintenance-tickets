@@ -23,18 +23,18 @@ class MaintenanceTicket < ActiveRecord::Base
   def notify
     return unless created_at_changed? || closed?
 
-    emails = recipients.split(',').map(&:strip) | [ENV["MAINTENANCE_TICKET_NOTIFICATION_EMAIL"], client_email].compact
+    emails = recipients.split(',').map(&:strip) | [ENV['MAINTENANCE_TICKET_NOTIFICATION_EMAIL'], client_email].compact
 
     MaintenanceTicketMailer.send_ticket_infos(self, emails)
       .deliver_now unless emails.empty?
   end
 
   def opened?
-    state == "Ouvert"
+    state == 'Ouvert'
   end
 
   def closed?
-    state == "Fermé"
+    state == 'Fermé'
   end
 
 end
