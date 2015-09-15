@@ -1,6 +1,7 @@
 1.2.0
 -----
 
+- Add 'Atelier' for MaintenanceTicket::MAINTAINED_BY
 - Passenger 5.0.18
 - Rails 4.2.4
 - Ruby 2.2.3

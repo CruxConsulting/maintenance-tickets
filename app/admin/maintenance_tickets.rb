@@ -42,11 +42,7 @@ ActiveAdmin.register MaintenanceTicket do
 
       f.input :maintained_by,
               as: :select,
-              collection: {
-                'Téléphone'     => 'Téléphone',
-                'Prise de main' => 'Prise de main',
-                'Sur site'      => 'Sur site'
-              },
+              collection: resource.class::MAINTAINED_BY,
               include_blank: false
 
       f.input :maintenance_date, as: :datepicker

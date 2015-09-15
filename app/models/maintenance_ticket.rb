@@ -1,5 +1,15 @@
 class MaintenanceTicket < ActiveRecord::Base
 
+  # Constants
+  ###########
+
+  MAINTAINED_BY = [
+    'Téléphone',
+    'Prise de main',
+    'Sur site',
+    'Atelier'
+  ]
+
   # Associations
   ##############
 
