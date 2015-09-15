@@ -1,16 +1,6 @@
-# encoding: UTF-8
-
 ActiveAdmin.register MaintenanceTicket do
 
-  config.sort_order = "state_desc"
-
-  client_select2_options = {
-    placeholder: "Choisir un client",
-    resourcesPath: "/admin/clients",
-    queryKey: "q[name_cont]",
-    order: "name_asc",
-    resultFormat: "data.name"
-  }
+  config.sort_order = 'state_desc'
 
   # Views
   #######
@@ -50,29 +40,31 @@ ActiveAdmin.register MaintenanceTicket do
   form do |f|
     f.inputs do
 
-      f.input :maintained_by, as: :select, collection:
-      {
-        "Téléphone" => "Téléphone",
-        "Prise de main" => "Prise de main",
-        "Sur site" => "Sur site"
-        }, include_blank: false
+      f.input :maintained_by,
+              as: :select,
+              collection: {
+                'Téléphone'     => 'Téléphone',
+                'Prise de main' => 'Prise de main',
+                'Sur site'      => 'Sur site'
+              },
+              include_blank: false
 
       f.input :maintenance_date, as: :datepicker
-
       f.input :client
+      f.input :description, input_html: { rows: 10 }
+      f.input :comment, input_html: { rows: 10 }
 
-      f.input :description, :input_html => { :rows => 10 }
-
-      f.input :comment, :input_html => { :rows => 10 }
-
-      f.input :state, as: :select, collection: {"Ouvert" => "Ouvert", "Fermé" => "Fermé"}, include_blank: false
+      f.input :state,
+              as: :select,
+              collection: {
+                'Ouvert' => 'Ouvert',
+                'Fermé' => 'Fermé'
+              },
+              include_blank: false
 
       f.input :assigned_to
-
       f.input :duration
-
       f.input :recipients, hint: "Liste d'emails séparés par une virgule"
-
     end
 
     f.actions
@@ -83,12 +75,11 @@ ActiveAdmin.register MaintenanceTicket do
   ############
 
   controller do
-
-     def create
-       create! do |format|
-          format.html { redirect_to admin_maintenance_tickets_url }
-       end
-     end
-   end
+    def create
+      create! do |format|
+        format.html { redirect_to admin_maintenance_tickets_url }
+      end
+    end
+  end
 
 end
