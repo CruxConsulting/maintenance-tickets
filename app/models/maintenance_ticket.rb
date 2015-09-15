@@ -48,7 +48,7 @@ class MaintenanceTicket < ActiveRecord::Base
   end
 
   def opened?
-    state == 'Ouvert'
+    !(state =~ /Ouvert/).nil?
   end
 
   def closed?
