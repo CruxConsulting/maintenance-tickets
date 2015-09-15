@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915150548) do
+ActiveRecord::Schema.define(version: 20150915151354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,9 +72,9 @@ ActiveRecord::Schema.define(version: 20150915150548) do
   create_table "maintenance_tickets", force: :cascade do |t|
     t.string   "maintained_by",     limit: 255
     t.text     "comment"
-    t.string   "state",             limit: 255
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.string   "state",                         default: "Ouvert - Urgent"
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
     t.integer  "client_id"
     t.text     "description"
     t.string   "assigned_to",       limit: 255

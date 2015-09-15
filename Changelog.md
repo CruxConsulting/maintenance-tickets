@@ -1,6 +1,7 @@
 1.2.0
 -----
 
+- Set 'Ouvert - Urgent' as default state for tickets
 - Add 'Ouvert - X' states to MaintenanceTicket::STATES
 - Add 'confidential_info' to maintenance tickets show and edit
 - Add 'comment' to maintenance tickets show
