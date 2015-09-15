@@ -10,6 +10,14 @@ class MaintenanceTicket < ActiveRecord::Base
     'Atelier'
   ]
 
+  STATES = [
+    'Ouvert',
+    'Ouvert - Attente client',
+    'Ouvert - Attente fournisseur',
+    'Ouvert - Urgent',
+    'Fermé'
+  ]
+
   # Associations
   ##############
 

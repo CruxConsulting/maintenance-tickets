@@ -59,10 +59,7 @@ ActiveAdmin.register MaintenanceTicket do
 
       f.input :state,
               as: :select,
-              collection: {
-                'Ouvert' => 'Ouvert',
-                'Fermé' => 'Fermé'
-              },
+              collection: resource.class::STATES,
               include_blank: false
 
       f.input :assigned_to

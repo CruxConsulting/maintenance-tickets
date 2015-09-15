@@ -1,6 +1,7 @@
 1.2.0
 -----
 
+- Add 'Ouvert - X' states to MaintenanceTicket::STATES
 - Add 'confidential_info' to maintenance tickets show and edit
 - Add 'comment' to maintenance tickets show
 - Add 'Atelier' for MaintenanceTicket::MAINTAINED_BY
