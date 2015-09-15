@@ -31,6 +31,9 @@ ActiveAdmin.register MaintenanceTicket do
       row :description do |ticket|
         simple_format ticket.description
       end
+      row :comment do |ticket|
+        simple_format ticket.comment
+      end
       row :assigned_to
       row :duration
       row :recipients
