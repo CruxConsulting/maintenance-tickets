@@ -1,9 +1,14 @@
-1.1.3
+1.2.0
 -----
 
 - Passenger 5.0.18
 - Rails 4.2.4
 - Ruby 2.2.3
+
+1.1.3
+-----
+
+- back to default scope order(:name) for clients
 
 1.1.2
 -----
