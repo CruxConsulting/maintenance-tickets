@@ -1,6 +1,7 @@
 1.2.0
 -----
 
+- select for ticket.assigned_to field
 - Set 'Ouvert - Urgent' as default state for tickets
 - Add 'Ouvert - X' states to MaintenanceTicket::STATES
 - Add 'confidential_info' to maintenance tickets show and edit

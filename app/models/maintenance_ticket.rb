@@ -18,6 +18,8 @@ class MaintenanceTicket < ActiveRecord::Base
     'Fermé'
   ]
 
+  TECH_PEOPLE = ENV['TECH_PEOPLE'].split(',')
+
   # Associations
   ##############
 
