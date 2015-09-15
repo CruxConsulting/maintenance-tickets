@@ -34,6 +34,9 @@ ActiveAdmin.register MaintenanceTicket do
       row :comment do |ticket|
         simple_format ticket.comment
       end
+      row :confidential_info do |ticket|
+        simple_format ticket.confidential_info
+      end
       row :assigned_to
       row :duration
       row :recipients
@@ -52,6 +55,7 @@ ActiveAdmin.register MaintenanceTicket do
       f.input :client
       f.input :description, input_html: { rows: 10 }
       f.input :comment, input_html: { rows: 10 }
+      f.input :confidential_info, input_html: { rows: 10 }
 
       f.input :state,
               as: :select,

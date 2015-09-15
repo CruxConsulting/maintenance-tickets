@@ -13,6 +13,7 @@ fr:
       admin_user:
         username: Login
       maintenance_ticket:
+        confidential_info: Infos confidentielles
         maintained_by: Type d'intervention
         maintenance_date: Date d'intervention
         comment: Solutions Apportées
