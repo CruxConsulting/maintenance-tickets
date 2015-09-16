@@ -5,6 +5,12 @@ ActiveAdmin.register MaintenanceTicket do
   # Views
   #######
 
+  member_action :notify do
+    resource.notify force: true
+    redirect_to admin_maintenance_tickets_path,
+                notice: "Email envoyé pour le ticket #{resource.id}"
+  end
+
   index do
     column :id
     column :client
@@ -14,7 +20,12 @@ ActiveAdmin.register MaintenanceTicket do
     column :comment
     column :state
     column :created_at
-    actions
+
+    actions do |resource|
+      link_to "Renvoi de l'email",
+              notify_admin_maintenance_ticket_path(resource),
+              class: 'member_link'
+    end
   end
 
   show do

@@ -41,8 +41,8 @@ class MaintenanceTicket < ActiveRecord::Base
 
   delegate :name, :email, to: :client, prefix: true
 
-  def notify
-    return unless created_at_changed? || closed?
+  def notify(options = {force: false})
+    return unless options[:force] == true || created_at_changed? || closed?
 
     emails = recipients.split(',').map(&:strip) | [ENV['MAINTENANCE_TICKET_NOTIFICATION_EMAIL'], client_email].compact
 

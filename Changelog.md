@@ -1,6 +1,7 @@
 1.2.0
 -----
 
+- Add action link "Renvoi de l'email" on tickets index
 - use a number input with step 0.5 for ticket duration field
 - multiple values for assigned to
 - select for ticket.assigned_to field
