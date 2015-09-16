@@ -13,6 +13,7 @@ fr:
       admin_user:
         username: Login
       maintenance_ticket:
+        confidential_info: Infos confidentielles
         maintained_by: Type d'intervention
         maintenance_date: Date d'intervention
         comment: Solutions Apportées
@@ -20,7 +21,7 @@ fr:
         created_at: Créé le
         updated_at: Mis à jour le
         description: Demandes
-        assigned_to: Nom du technicien
+        assigned_to: Assigné à
         duration: Durée de l'intervention
         recipients: Destinataires
       client:

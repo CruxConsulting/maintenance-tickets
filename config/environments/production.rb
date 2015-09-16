@@ -69,13 +69,25 @@ AdminAsconseilEu::Application.configure do
 
 end
 
-ActionMailer::Base.smtp_settings = {
-  :address        => 'smtp.sendgrid.net',
-  :port           => '587',
-  :authentication => :plain,
-  :user_name      => ENV['SENDGRID_USERNAME'],
-  :password       => ENV['SENDGRID_PASSWORD'],
-  :domain         => 'heroku.com'
-}
-ActionMailer::Base.delivery_method = :smtp
 
+smtp_settings = if ENV['USE_MAILTRAP']
+                  {
+                    user_name:      ENV['MAILTRAP_USERNAME'],
+                    password:       ENV['MAILTRAP_PASSWORD'],
+                    address:        'mailtrap.io',
+                    domain:         'mailtrap.io',
+                    port:           '2525',
+                    authentication: :cram_md5
+                  }
+                else
+                  {
+                    address:        'smtp.sendgrid.net',
+                    port:           '587',
+                    authentication: :plain,
+                    user_name:      ENV['SENDGRID_USERNAME'],
+                    password:       ENV['SENDGRID_PASSWORD'],
+                    domain:         'heroku.com'
+                  }
+                end
+
+ActionMailer::Base.smtp_settings = smtp_settings

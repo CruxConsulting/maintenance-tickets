@@ -1,3 +1,20 @@
+1.2.0
+-----
+
+- order assets in descending order in assets_expire_soon email
+- Add action link "Renvoi de l'email" on tickets index
+- use a number input with step 0.5 for ticket duration field
+- multiple values for assigned to
+- select for ticket.assigned_to field
+- Set 'Ouvert - Urgent' as default state for tickets
+- Add 'Ouvert - X' states to MaintenanceTicket::STATES
+- Add 'confidential_info' to maintenance tickets show and edit
+- Add 'comment' to maintenance tickets show
+- Add 'Atelier' for MaintenanceTicket::MAINTAINED_BY
+- Passenger 5.0.18
+- Rails 4.2.4
+- Ruby 2.2.3
+
 1.1.3
 -----
 

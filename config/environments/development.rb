@@ -31,4 +31,13 @@ AdminAsconseilEu::Application.configure do
   config.action_mailer.default_url_options = { :host => "admin-asconseil.dev" }
 
   config.eager_load = false
+
+  config.action_mailer.smtp_settings = {
+    user_name:      ENV['MAILTRAP_USERNAME'],
+    password:       ENV['MAILTRAP_PASSWORD'],
+    address:        'mailtrap.io',
+    domain:         'mailtrap.io',
+    port:           '2525',
+    authentication: :cram_md5
+  }
 end

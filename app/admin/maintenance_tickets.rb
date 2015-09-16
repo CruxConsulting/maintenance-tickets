@@ -1,19 +1,15 @@
-# encoding: UTF-8
-
 ActiveAdmin.register MaintenanceTicket do
 
-  config.sort_order = "state_desc"
-
-  client_select2_options = {
-    placeholder: "Choisir un client",
-    resourcesPath: "/admin/clients",
-    queryKey: "q[name_cont]",
-    order: "name_asc",
-    resultFormat: "data.name"
-  }
+  config.sort_order = 'state_desc'
 
   # Views
   #######
+
+  member_action :notify do
+    resource.notify force: true
+    redirect_to admin_maintenance_tickets_path,
+                notice: "Email envoyé pour le ticket #{resource.id}"
+  end
 
   index do
     column :id
@@ -24,7 +20,12 @@ ActiveAdmin.register MaintenanceTicket do
     column :comment
     column :state
     column :created_at
-    actions
+
+    actions do |resource|
+      link_to "Renvoi de l'email",
+              notify_admin_maintenance_ticket_path(resource),
+              class: 'member_link'
+    end
   end
 
   show do
@@ -41,7 +42,15 @@ ActiveAdmin.register MaintenanceTicket do
       row :description do |ticket|
         simple_format ticket.description
       end
-      row :assigned_to
+      row :comment do |ticket|
+        simple_format ticket.comment
+      end
+      row :confidential_info do |ticket|
+        simple_format ticket.confidential_info
+      end
+      row :assigned_to do
+        ticket_assigned_to_human(resource)
+      end
       row :duration
       row :recipients
     end
@@ -50,29 +59,30 @@ ActiveAdmin.register MaintenanceTicket do
   form do |f|
     f.inputs do
 
-      f.input :maintained_by, as: :select, collection:
-      {
-        "Téléphone" => "Téléphone",
-        "Prise de main" => "Prise de main",
-        "Sur site" => "Sur site"
-        }, include_blank: false
+      f.input :maintained_by,
+              as: :select,
+              collection: resource.class::MAINTAINED_BY,
+              include_blank: false
 
       f.input :maintenance_date, as: :datepicker
-
       f.input :client
+      f.input :description, input_html: { rows: 10 }
+      f.input :comment, input_html: { rows: 10 }
+      f.input :confidential_info, input_html: { rows: 10 }
 
-      f.input :description, :input_html => { :rows => 10 }
+      f.input :state,
+              as: :select,
+              collection: resource.class::STATES,
+              include_blank: false
 
-      f.input :comment, :input_html => { :rows => 10 }
+      f.input :assigned_to,
+              as: :select,
+              input_html: {multiple: true},
+              collection: resource.class::TECH_PEOPLE,
+              include_blank: false
 
-      f.input :state, as: :select, collection: {"Ouvert" => "Ouvert", "Fermé" => "Fermé"}, include_blank: false
-
-      f.input :assigned_to
-
-      f.input :duration
-
+      f.input :duration, as: :number, input_html: {step: 0.5}
       f.input :recipients, hint: "Liste d'emails séparés par une virgule"
-
     end
 
     f.actions
@@ -83,12 +93,11 @@ ActiveAdmin.register MaintenanceTicket do
   ############
 
   controller do
-
-     def create
-       create! do |format|
-          format.html { redirect_to admin_maintenance_tickets_url }
-       end
-     end
-   end
+    def create
+      create! do |format|
+        format.html { redirect_to admin_maintenance_tickets_url }
+      end
+    end
+  end
 
 end
