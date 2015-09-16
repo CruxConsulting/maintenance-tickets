@@ -63,7 +63,9 @@ AdminAsconseilEu::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.action_mailer.default_url_options = { :host => "admin.asconseil.eu" }
+  config.action_mailer.default_url_options = {
+    host: ENV['ACTION_MAILER_DEFAULT_URL_HOST'] || 'admin.asconseil.eu'
+  }
 
   config.eager_load = true
   config.log_level = :info
