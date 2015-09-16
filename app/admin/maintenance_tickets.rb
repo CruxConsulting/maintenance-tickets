@@ -70,7 +70,7 @@ ActiveAdmin.register MaintenanceTicket do
               collection: resource.class::TECH_PEOPLE,
               include_blank: false
 
-      f.input :duration
+      f.input :duration, as: :number, input_html: {step: 0.5}
       f.input :recipients, hint: "Liste d'emails séparés par une virgule"
     end
 

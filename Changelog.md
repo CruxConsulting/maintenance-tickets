@@ -1,6 +1,7 @@
 1.2.0
 -----
 
+- use a number input with step 0.5 for ticket duration field
 - multiple values for assigned to
 - select for ticket.assigned_to field
 - Set 'Ouvert - Urgent' as default state for tickets
