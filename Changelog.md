@@ -1,6 +1,7 @@
 1.2.0
 -----
 
+- order assets in descending order in assets_expire_soon email
 - Add action link "Renvoi de l'email" on tickets index
 - use a number input with step 0.5 for ticket duration field
 - multiple values for assigned to
