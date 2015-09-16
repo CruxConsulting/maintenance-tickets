@@ -1,6 +1,9 @@
 # encoding: utf-8
 
 class MaintenanceTicketMailer < ActionMailer::Base
+
+  add_template_helper(MaintenanceTicketHelper)
+
   default from: 'support@asconseil.eu'
 
   def send_ticket_infos(ticket, recipients)

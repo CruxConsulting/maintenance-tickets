@@ -2,7 +2,7 @@
 
 %p
   Vous trouverez ci-dessous un récapitulatif de l’intervention menée par
-  #{@ticket.assigned_to} le #{l @ticket.maintenance_date}.
+  #{ticket_assigned_to_human(@ticket)} le #{l @ticket.maintenance_date}.
 
 %ul
   %li
