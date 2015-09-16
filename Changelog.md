@@ -1,5 +1,10 @@
-1.2.0
------
+1.2.0-beta.2
+------------
+
+- fix select2 image assets in prod
+
+1.2.0-beta.1
+------------
 
 - order assets in descending order in assets_expire_soon email
 - Add action link "Renvoi de l'email" on tickets index
