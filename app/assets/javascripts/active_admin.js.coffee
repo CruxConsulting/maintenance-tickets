@@ -2,3 +2,5 @@
 #= require select2/select2.min
 #= require active_admin_select2/active_admin_select2
 
+$ ->
+  $('#maintenance_ticket_assigned_to').select2();

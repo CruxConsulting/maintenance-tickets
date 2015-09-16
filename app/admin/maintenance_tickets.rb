@@ -37,7 +37,9 @@ ActiveAdmin.register MaintenanceTicket do
       row :confidential_info do |ticket|
         simple_format ticket.confidential_info
       end
-      row :assigned_to
+      row :assigned_to do
+        ticket_assigned_to_human(resource)
+      end
       row :duration
       row :recipients
     end
@@ -64,6 +66,7 @@ ActiveAdmin.register MaintenanceTicket do
 
       f.input :assigned_to,
               as: :select,
+              input_html: {multiple: true},
               collection: resource.class::TECH_PEOPLE,
               include_blank: false
 

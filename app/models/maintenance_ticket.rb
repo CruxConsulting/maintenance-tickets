@@ -33,6 +33,7 @@ class MaintenanceTicket < ActiveRecord::Base
   # Callbacks
   ###########
 
+  before_save :_remove_blank_from_assigned_to
   after_save :notify
 
   # Instance methods
@@ -55,6 +56,12 @@ class MaintenanceTicket < ActiveRecord::Base
 
   def closed?
     state == 'Fermé'
+  end
+
+  private
+
+  def _remove_blank_from_assigned_to
+    assigned_to.reject!(&:blank?)
   end
 
 end

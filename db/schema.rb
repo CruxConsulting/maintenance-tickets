@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915151354) do
+ActiveRecord::Schema.define(version: 20150915152716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,11 +77,11 @@ ActiveRecord::Schema.define(version: 20150915151354) do
     t.datetime "updated_at",                                                null: false
     t.integer  "client_id"
     t.text     "description"
-    t.string   "assigned_to",       limit: 255
     t.string   "duration",          limit: 255
     t.string   "recipients",        limit: 255
     t.date     "maintenance_date"
     t.text     "confidential_info"
+    t.string   "assigned_to",                   default: ["Volodia"],                    array: true
   end
 
 end
