@@ -1,3 +1,8 @@
+1.2.0-beta.3
+------------
+
+- use ENV['ACTION_MAILER_DEFAULT_URL_HOST'] in prod
+
 1.2.0-beta.2
 ------------
 
