@@ -1,6 +1,7 @@
 1.2.0-beta.4
 ------------
 
+- rename "Assigné à" to "Technicien"
 - smaller width for duration field
 - set a fixed width for the "assigned_to" field in the ticket form
 
