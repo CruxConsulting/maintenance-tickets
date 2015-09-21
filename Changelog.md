@@ -1,3 +1,9 @@
+1.2.0-beta.4
+------------
+
+- smaller width for duration field
+- set a fixed width for the "assigned_to" field in the ticket form
+
 1.2.0-beta.3
 ------------
 
