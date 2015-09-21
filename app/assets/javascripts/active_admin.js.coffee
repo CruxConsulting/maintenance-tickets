@@ -3,4 +3,5 @@
 #= require active_admin_select2/active_admin_select2
 
 $ ->
-  $('#maintenance_ticket_assigned_to').select2();
+  $('#maintenance_ticket_assigned_to').select2
+    width: '400px'
