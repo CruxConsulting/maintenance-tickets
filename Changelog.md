@@ -1,24 +1,12 @@
-1.2.0-beta.4
-------------
+1.2.0
+-----
 
+- localize ticket datepicker in french
 - use the ticket's first tech visit card at the end of the email
-- rename "Assigné à" to "Technicien"
 - smaller width for duration field
 - set a fixed width for the "assigned_to" field in the ticket form
-
-1.2.0-beta.3
-------------
-
 - use ENV['ACTION_MAILER_DEFAULT_URL_HOST'] in prod
-
-1.2.0-beta.2
-------------
-
 - fix select2 image assets in prod
-
-1.2.0-beta.1
-------------
-
 - order assets in descending order in assets_expire_soon email
 - Add action link "Renvoi de l'email" on tickets index
 - use a number input with step 0.5 for ticket duration field
