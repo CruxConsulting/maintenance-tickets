@@ -1,3 +1,8 @@
+1.3.0 (VMs)
+-----------
+
+- avoid n+1 queries in tickets index
+
 1.2.0
 -----
 

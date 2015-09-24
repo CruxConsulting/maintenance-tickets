@@ -93,6 +93,11 @@ ActiveAdmin.register MaintenanceTicket do
   ############
 
   controller do
+
+    def scoped_collection
+      end_of_association_chain.includes(:client)
+    end
+
     def create
       create! do |format|
         format.html { redirect_to admin_maintenance_tickets_url }
