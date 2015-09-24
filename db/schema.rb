@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150924121650) do
+ActiveRecord::Schema.define(version: 20150924135958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,17 @@ ActiveRecord::Schema.define(version: 20150924121650) do
     t.text     "comment"
   end
 
+  create_table "disks", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "total_storage", default: 0
+    t.integer  "used_storage",  default: 0
+    t.integer  "asset_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "disks", ["asset_id"], name: "index_disks_on_asset_id", using: :btree
+
   create_table "maintenance_tickets", force: :cascade do |t|
     t.string   "maintained_by",     limit: 255
     t.text     "comment"
@@ -86,4 +97,5 @@ ActiveRecord::Schema.define(version: 20150924121650) do
     t.string   "assigned_to",                   default: ["Volodia"],                    array: true
   end
 
+  add_foreign_key "disks", "assets"
 end

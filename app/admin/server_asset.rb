@@ -38,6 +38,21 @@ ActiveAdmin.register ServerAsset do
         l resource.expiration_date, format: :long
       end
     end
+
+    panel Disk.model_name.human(count: resource.disks.size) do
+      table_for resource.disks.order(:name) do
+        column 'Partition', :name
+        column 'Capacité totale' do |r|
+          "#{r.total_storage} Go" if r.total_storage
+        end
+        column 'Capacité utilisée' do |r|
+          "#{r.used_storage} Go" if r.used_storage
+        end
+        column 'Capacité restante' do |r|
+          "#{r.storage_left} Go" if r.storage_left
+        end
+      end
+    end
   end
 
   form do |f|
@@ -47,6 +62,12 @@ ActiveAdmin.register ServerAsset do
       f.input :description
       f.input :quantity, hint: 'Go'
       f.input :expiration_date
+    end
+
+    f.has_many :disks do |ff|
+      ff.input :name
+      ff.input :total_storage, hint: 'Go'
+      ff.input :used_storage, hint: 'Go'
     end
 
     f.actions

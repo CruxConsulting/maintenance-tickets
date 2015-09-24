@@ -1,7 +1,7 @@
 1.3.0 (VMs)
 -----------
 
-
+- new disk model
 - add STI to assets
 - avoid n+1 queries in tickets index
 
