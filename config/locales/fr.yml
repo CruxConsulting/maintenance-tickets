@@ -7,7 +7,20 @@ fr:
         other: Tickets de maintenance
       asset:
         one: Objet
-        other: Objets
+        other: Tous les objets
+      domain_asset:
+        one: Domaine
+        other: Domaines
+      server_asset:
+        one: Serveur
+        other: Serveurs
+      firewall_asset:
+        one: Firewall
+        other: Firewalls
+      mail_software_asset:
+        one: Logiciel de messagerie
+        other: Logiciels de messagerie
+      antivirus_asset: 'Antivirus'
 
     attributes:
       admin_user:
@@ -33,6 +46,17 @@ fr:
       asset:
         name: Nom
         expiration_date: "Date d'expiration"
+      antivirus_asset:
+        quantity: Quantité
+      domain_asset:
+        quantity: Quantité d'emails
+      mail_software_asset:
+        quantity: Quantité d'emails
+      server_asset:
+        name: Numéro de série
+        quantity: Capacité mémoire
+      antivirus_asset:
+        quantity: Quantité
 
   formtastic:
     :yes: 'Oui'

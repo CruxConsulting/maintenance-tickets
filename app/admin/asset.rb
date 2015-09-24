@@ -1,56 +1,24 @@
 ActiveAdmin.register Asset do
 
-  client_select2_options = {
-    placeholder: "Choisir un client",
-    resourcesPath: "/admin/clients",
-    queryKey: "q[name_cont]",
-    order: "name_asc",
-    resultFormat: "data.name"
-  }
+  actions :index, :destroy
+
+  menu parent: 'Objets'
 
   filter :client
   filter :name
-
-  controller do
-    def scoped_collection
-      end_of_association_chain.includes(:client)
-    end
-  end
+  filter :description
+  filter :expiration_date
 
   index do
     column :client
     column :name
-    column :description do |resource|
-      simple_format resource.description
-    end
     column :expiration_date do |resource|
       l resource.expiration_date, format: :long
     end
-    actions
-  end
 
-  show do
-    attributes_table do
-      row :client
-      row :name
-      row :description do
-        simple_format resource.description
-      end
-      row :expiration_date do
-        l resource.expiration_date, format: :long
-      end
+    actions do |resource|
+      link_to 'modifier', [:admin, resource], class: 'member_link'
     end
-  end
-
-  form do |f|
-    f.inputs do
-      f.input :client
-      f.input :name
-      f.input :description
-      f.input :expiration_date
-    end
-
-    f.actions
   end
 
 end
