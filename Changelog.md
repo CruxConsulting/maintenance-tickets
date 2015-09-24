@@ -1,6 +1,7 @@
 1.3.0 (VMs)
 -----------
 
+
 - add STI to assets
 - avoid n+1 queries in tickets index
 
