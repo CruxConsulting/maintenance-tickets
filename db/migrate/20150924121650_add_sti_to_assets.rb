@@ -20,5 +20,8 @@ class AddStiToAssets < ActiveRecord::Migration
     Asset.where(name: ['DOMAINE'])
       .update_all type: DomainAsset
 
+    Asset.where(type: nil)
+      .update_all type: UncategorizedAsset
+
   end
 end

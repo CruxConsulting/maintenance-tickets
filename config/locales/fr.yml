@@ -5,9 +5,6 @@ fr:
       maintenance_ticket:
         one: Ticket de maintenance
         other: Tickets de maintenance
-      asset:
-        one: Objet
-        other: Tous les objets
       domain_asset:
         one: Domaine
         other: Domaines
@@ -20,6 +17,9 @@ fr:
       mail_software_asset:
         one: Logiciel de messagerie
         other: Logiciels de messagerie
+      uncategorized_asset:
+        one: Autre objet
+        other: Autres objet
       antivirus_asset: 'Antivirus'
 
     attributes:
@@ -43,7 +43,7 @@ fr:
         created_at: Créé le
         updated_at: Mis à jour le
         assets: "Objets"
-      asset:
+      uncategorized_asset:
         name: Nom
         expiration_date: "Date d'expiration"
       antivirus_asset:
