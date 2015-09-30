@@ -39,7 +39,7 @@ class MonthlyReport < ActiveRecord::Base
     pdf.restore
     pdf.disks
     pdf.antivirus
-    # pdf.notes
+    pdf.notes
 
     pdf
   end
