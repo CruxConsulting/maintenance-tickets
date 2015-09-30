@@ -147,10 +147,6 @@ class MonthlyReportPDF
         text %w(oui non).sample
       end
 
-      bounding_box([200, 40], width: 150, height: 40) do
-        # stroke_bounds
-        text 'MAJ manuelle'
-      end
     end
   end
 
