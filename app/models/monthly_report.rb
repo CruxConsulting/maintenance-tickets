@@ -24,7 +24,7 @@ class MonthlyReport < ActiveRecord::Base
   end
 
   def full_name
-    [client_name, server_asset_name, display_name].join(' - ')
+    [client_name, server_asset_name, display_name].join('-')
   end
 
   # @return [MonthlyReportPDF]
