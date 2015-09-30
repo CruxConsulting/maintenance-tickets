@@ -2,22 +2,86 @@ ActiveAdmin.register MonthlyReport do
 
   belongs_to :server_asset
 
-  filter :client
+  member_action :save_pdf do
+
+    notice = case resource.pdf?
+             when true
+               'PDF updated'
+             else
+               'PDF saved'
+             end
+
+    resource.save_pdf
+
+    redirect_to admin_server_asset_monthly_reports_path(resource),
+                notice: notice
+  end
+
+  action_item only: :show do
+    link_to 'Save PDF',
+            save_pdf_admin_server_asset_monthly_report_path(
+              resource.server_asset,
+              resource
+            )
+  end
 
   index do
     column :client
     column :server_asset
     column :date do |resource|
-      l resource.date, format: "%B %Y"
+      l resource.date, format: '%B %Y'
     end
 
     actions
   end
 
   show do
-    attributes_table do
-      row :client
-      row :server_asset
+    panel 'Cartouche' do
+      attributes_table_for resource do
+        row :date do
+          l resource.date, format: '%B %Y'
+        end
+        row :client
+        row :tech
+        row :server_asset
+      end
+    end
+
+    panel 'Sauvegarde' do
+      attributes_table_for resource do
+        row :last_backup_state
+        row :last_backup_reason
+        row :previous_backups_state
+        row :previous_backups_reason
+      end
+    end
+
+    panel 'Restauration' do
+      attributes_table_for resource do
+        row :restore_state
+        row :restore_reason
+      end
+    end
+
+    panel 'Éléments fonctionnels' do
+      table_for :disks do
+        # column :partition
+        # column :total_storage
+        # column :storage_left
+      end
+    end
+
+    panel 'Protection Virale et Nuisible' do
+    end
+
+    panel 'Remarques' do
+      attributes_table_for resource do
+        row :notes
+      end
+    end
+
+    panel 'PDF' do
+      link_to resource['pdf'], resource.pdf.url if resource.pdf?
     end
 
   end
