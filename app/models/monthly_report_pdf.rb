@@ -103,6 +103,32 @@ class MonthlyReportPDF
   end
 
   def disks
+    bounding_box([50, 440], width: 500, height: 100) do
+      stroke_bounds
+      text 'Elements fonctionnels :', style: :bold, size: 16
+
+      bounding_box([0, 70], width: 100, height: 70) do
+        stroke_bounds
+        @monthly_report.disks.each do |disk|
+          text "Espace partition #{disk.name}", style: :bold
+        end
+      end
+
+      bounding_box([100, 70], width: 80, height: 70) do
+        stroke_bounds
+        @monthly_report.disks.each do |disk|
+          text disk.state
+        end
+      end
+
+      bounding_box([200, 70], width: 150, height: 70) do
+        stroke_bounds
+        @monthly_report.disks.each do |disk|
+          text "Capacité restante: #{disk.storage_left} Go"
+        end
+      end
+    end
+
   end
 
   def antivirus
