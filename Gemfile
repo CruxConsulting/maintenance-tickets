@@ -20,6 +20,7 @@ gem 'bower'
 gem 'activeadmin_select2'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'prawn'
 
 # Test gems
 ###########

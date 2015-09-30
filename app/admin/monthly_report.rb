@@ -3,22 +3,14 @@ ActiveAdmin.register MonthlyReport do
   belongs_to :server_asset
 
   member_action :save_pdf do
-
-    notice = case resource.pdf?
-             when true
-               'PDF updated'
-             else
-               'PDF saved'
-             end
-
+    notice = resource.pdf? ? 'PDF updated' : 'PDF saved'
     resource.save_pdf
-
-    redirect_to admin_server_asset_monthly_reports_path(resource),
+    redirect_to admin_server_asset_monthly_reports_path(resource.server_asset),
                 notice: notice
   end
 
-  action_item only: :show do
-    link_to 'Save PDF',
+  action_item :save_pdf, only: :show do
+    link_to 'Enregistrer le PDF',
             save_pdf_admin_server_asset_monthly_report_path(
               resource.server_asset,
               resource

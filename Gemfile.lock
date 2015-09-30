@@ -170,10 +170,14 @@ GEM
     passenger (5.0.18)
       rack
       rake (>= 0.8.1)
+    pdf-core (0.6.0)
     pg (0.17.0)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     posix-spawn (0.3.6)
+    prawn (2.0.2)
+      pdf-core (~> 0.6.0)
+      ttfunk (~> 1.4.0)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -269,6 +273,7 @@ GEM
     tilt (1.4.1)
     todonotes (0.1.0)
       log4r
+    ttfunk (1.4.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.0)
@@ -299,6 +304,7 @@ DEPENDENCIES
   newrelic_rpm
   passenger (~> 5.0.18)
   pg
+  prawn
   pry-byebug
   pry-rails
   rails (~> 4.2.0)
