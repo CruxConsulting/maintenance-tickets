@@ -146,8 +146,8 @@ class MonthlyReportPDF
 
       bounding_box([120, 40], width: 80, height: 40) do
         # stroke_bounds
-        text %w(oui non).sample
-        text %w(oui non).sample
+        text @monthly_report.software_working? ? 'Oui' : 'Non'
+        text @monthly_report.licence_up_to_date? ? 'Oui' : 'Non'
       end
 
     end

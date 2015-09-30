@@ -69,6 +69,14 @@ ActiveAdmin.register MonthlyReport do
     end
 
     panel 'Protection Virale et Nuisible' do
+      attributes_table_for resource do
+        row :software_working do
+          resource.software_working? ? 'Oui' : 'Non'
+        end
+        row :licence_up_to_date do
+          resource.licence_up_to_date? ? 'Oui' : 'Non'
+        end
+      end
     end
 
     panel 'Remarques' do
@@ -138,6 +146,8 @@ ActiveAdmin.register MonthlyReport do
     end
 
     f.inputs 'Protection Virale et Nuisible' do
+      f.input :software_working
+      f.input :licence_up_to_date
     end
 
     f.inputs 'Remarques' do

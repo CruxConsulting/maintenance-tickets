@@ -114,6 +114,8 @@ ActiveRecord::Schema.define(version: 20150930151037) do
     t.datetime "updated_at",                                  null: false
     t.string   "hard_drives_state",       default: "Ok"
     t.integer  "hard_drives_down",        default: 0
+    t.boolean  "software_working",        default: true,      null: false
+    t.boolean  "licence_up_to_date",      default: true,      null: false
   end
 
   add_index "monthly_reports", ["server_asset_id"], name: "index_monthly_reports_on_server_asset_id", using: :btree

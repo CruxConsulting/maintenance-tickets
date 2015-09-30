@@ -41,6 +41,8 @@ fr:
         restore_reason: Raison
         hard_drives_state: Disque durs
         hard_drives_down: Nb de disques HS
+        software_working: Logiciel fonctionnel
+        licence_up_to_date: "Logiciel à jour (<5jrs)"
       admin_user:
         username: Login
       maintenance_ticket:
