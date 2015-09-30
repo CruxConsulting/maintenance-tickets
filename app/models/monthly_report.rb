@@ -36,7 +36,7 @@ class MonthlyReport < ActiveRecord::Base
     pdf.background
     pdf.cartouche
     pdf.backup
-    # pdf.restore
+    pdf.restore
     # pdf.disks
     # pdf.antivirus
     # pdf.notes

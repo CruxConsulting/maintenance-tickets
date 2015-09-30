@@ -22,12 +22,12 @@ class MonthlyReportPDF
   end
 
   def cartouche
-    bounding_box([250, 700], width: 200, height: 50) do
+    bounding_box([250, 750], width: 200, height: 50) do
       stroke_bounds
       text 'Visite Mensuelle', size: 20, style: :bold
     end
 
-    bounding_box([200, 650], width: 100, height: 80) do
+    bounding_box([200, 700], width: 100, height: 80) do
       stroke_bounds
       text 'Date:', style: :bold
       text 'Nom du client:', style: :bold
@@ -35,7 +35,7 @@ class MonthlyReportPDF
       text 'Nom Serveur:', style: :bold
     end
 
-    bounding_box([300, 650], width: 250, height: 80) do
+    bounding_box([300, 700], width: 250, height: 80) do
       stroke_bounds
       text @monthly_report.display_name
       text @monthly_report.client_name
@@ -45,7 +45,7 @@ class MonthlyReportPDF
   end
 
   def backup
-    bounding_box([50, 550], width: 500, height: 100) do
+    bounding_box([50, 600], width: 500, height: 100) do
       stroke_bounds
       text 'Sauvegarde :', style: :bold, size: 16
 
@@ -55,19 +55,19 @@ class MonthlyReportPDF
         text 'Derniers jours :', style: :bold
       end
 
-      bounding_box([110, 70], width: 80, height: 50) do
+      bounding_box([80, 70], width: 80, height: 50) do
         stroke_bounds
         text @monthly_report.last_backup_state
         text @monthly_report.previous_backups_state
       end
 
-      bounding_box([200, 70], width: 120, height: 50) do
+      bounding_box([150, 70], width: 120, height: 50) do
         stroke_bounds
         text 'Raison', style: :bold
         text 'Raison principale', style: :bold
       end
 
-      bounding_box([340, 70], width: 160, height: 50) do
+      bounding_box([250, 70], width: 250, height: 50) do
         stroke_bounds
         text @monthly_report.last_backup_reason
         text @monthly_report.previous_backups_reason
@@ -76,6 +76,30 @@ class MonthlyReportPDF
   end
 
   def restore
+    bounding_box([50, 500], width: 500, height: 50) do
+      stroke_bounds
+      text 'Restauration :', style: :bold, size: 16
+
+      bounding_box([0, 20], width: 100, height: 20) do
+        stroke_bounds
+        text 'Résultat :', style: :bold
+      end
+
+      bounding_box([80, 20], width: 80, height: 20) do
+        stroke_bounds
+        text @monthly_report.restore_state
+      end
+
+      bounding_box([150, 20], width: 120, height: 20) do
+        stroke_bounds
+        text 'Raison', style: :bold
+      end
+
+      bounding_box([250, 20], width: 250, height: 20) do
+        stroke_bounds
+        text @monthly_report.restore_reason
+      end
+    end
   end
 
   def disks
@@ -117,7 +141,7 @@ class MonthlyReportPDF
   private
 
   def setup_defaults
-    font_size 12
+    font_size 10
     default_leading 3
   end
 
