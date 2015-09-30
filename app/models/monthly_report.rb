@@ -1,6 +1,7 @@
 class MonthlyReport < ActiveRecord::Base
 
   BACKUP_STATES = %w(Terminé Incomplet Échec)
+  HARD_DRIVE_STATES = %w(Ok Détérioré HS)
 
   belongs_to :server_asset
   has_one :client, through: :server_asset

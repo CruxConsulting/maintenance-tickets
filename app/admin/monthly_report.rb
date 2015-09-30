@@ -56,10 +56,15 @@ ActiveAdmin.register MonthlyReport do
     end
 
     panel 'Éléments fonctionnels' do
-      table_for :disks do
-        # column :partition
-        # column :total_storage
-        # column :storage_left
+      attributes_table_for resource do
+        row :hard_drives_state
+        row :hard_drives_down
+      end
+      table_for resource.disks do
+        column 'partition', :name
+        column 'État', :state
+        column 'Capacité totale (Go)', :total_storage
+        column 'Capacité restante (Go)', :storage_left
       end
     end
 
@@ -117,6 +122,13 @@ ActiveAdmin.register MonthlyReport do
     end
 
     f.inputs 'Éléments fonctionnels' do
+      f.input :hard_drives_state,
+              as: :radio,
+              collection: MonthlyReport::HARD_DRIVE_STATES
+
+      f.input :hard_drives_down,
+              input_html: {min: 0}
+
       f.has_many :disks, new_record: false do |ff|
         ff.input :name
         ff.input :total_storage, hint: 'Go'

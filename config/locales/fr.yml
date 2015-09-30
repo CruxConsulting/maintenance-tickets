@@ -39,6 +39,8 @@ fr:
         previous_backups_reason: Raison principale
         restore_state: Résultat
         restore_reason: Raison
+        hard_drives_state: Disque durs
+        hard_drives_down: Nb de disques HS
       admin_user:
         username: Login
       maintenance_ticket:

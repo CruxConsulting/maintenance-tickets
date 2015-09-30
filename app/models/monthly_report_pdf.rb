@@ -109,6 +109,7 @@ class MonthlyReportPDF
 
       bounding_box([0, 70], width: 100, height: 70) do
         # stroke_bounds
+        text "Disque durs :", style: :bold
         @monthly_report.disks.each do |disk|
           text "Espace partition #{disk.name}", style: :bold
         end
@@ -116,6 +117,7 @@ class MonthlyReportPDF
 
       bounding_box([100, 70], width: 100, height: 70) do
         # stroke_bounds
+        text @monthly_report.hard_drives_state
         @monthly_report.disks.each do |disk|
           text disk.state
         end
@@ -123,6 +125,7 @@ class MonthlyReportPDF
 
       bounding_box([200, 70], width: 150, height: 70) do
         # stroke_bounds
+        text "Nombre de disques HS: #{@monthly_report.hard_drives_down}"
         @monthly_report.disks.each do |disk|
           text "Capacité restante: #{disk.storage_left} Go"
         end
