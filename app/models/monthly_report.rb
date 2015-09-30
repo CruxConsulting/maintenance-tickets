@@ -11,9 +11,7 @@ class MonthlyReport < ActiveRecord::Base
   validates_presence_of :server_asset
 
   after_initialize do
-    unless persisted?
-      self.date = Time.zone.today
-    end
+    self.date = Time.zone.today unless persisted?
   end
 
   def display_name
