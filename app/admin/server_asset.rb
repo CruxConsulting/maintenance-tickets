@@ -56,6 +56,7 @@ ActiveAdmin.register ServerAsset do
         column 'Capacité restante' do |r|
           "#{r.storage_left} Go" if r.storage_left
         end
+        column 'État', :state
       end
     end
   end
@@ -73,6 +74,7 @@ ActiveAdmin.register ServerAsset do
       ff.input :name
       ff.input :total_storage, hint: 'Go'
       ff.input :used_storage, hint: 'Go'
+      ff.input :state, as: :radio, collection: Disk::STATES
     end
 
     f.actions

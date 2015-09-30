@@ -121,7 +121,7 @@ ActiveAdmin.register MonthlyReport do
         ff.input :name
         ff.input :total_storage, hint: 'Go'
         ff.input :used_storage, hint: 'Go'
-
+        ff.input :state, as: :radio, collection: Disk::STATES
       end
     end
 

@@ -74,6 +74,7 @@ fr:
       antivirus_asset:
         quantity: Quantité
       disk:
+        state: État
         name: Partition
         total_storage: Capacité totale
         used_storage: Capacité utilisée
