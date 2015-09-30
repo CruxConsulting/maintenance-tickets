@@ -49,19 +49,19 @@ class MonthlyReportPDF
       stroke_bounds
       text 'Sauvegarde :', style: :bold, size: 16
 
-      bounding_box([0, 70], width: 100, height: 50) do
+      bounding_box([0, 70], width: 80, height: 50) do
         stroke_bounds
         text 'Veille :', style: :bold
         text 'Derniers jours :', style: :bold
       end
 
-      bounding_box([80, 70], width: 80, height: 50) do
+      bounding_box([80, 70], width: 70, height: 50) do
         stroke_bounds
         text @monthly_report.last_backup_state
         text @monthly_report.previous_backups_state
       end
 
-      bounding_box([150, 70], width: 120, height: 50) do
+      bounding_box([150, 70], width: 100, height: 50) do
         stroke_bounds
         text 'Raison', style: :bold
         text 'Raison principale', style: :bold
@@ -80,17 +80,17 @@ class MonthlyReportPDF
       stroke_bounds
       text 'Restauration :', style: :bold, size: 16
 
-      bounding_box([0, 20], width: 100, height: 20) do
+      bounding_box([0, 20], width: 80, height: 20) do
         stroke_bounds
         text 'Résultat :', style: :bold
       end
 
-      bounding_box([80, 20], width: 80, height: 20) do
+      bounding_box([80, 20], width: 70, height: 20) do
         stroke_bounds
         text @monthly_report.restore_state
       end
 
-      bounding_box([150, 20], width: 120, height: 20) do
+      bounding_box([150, 20], width: 100, height: 20) do
         stroke_bounds
         text 'Raison', style: :bold
       end
@@ -114,7 +114,7 @@ class MonthlyReportPDF
         end
       end
 
-      bounding_box([100, 70], width: 80, height: 70) do
+      bounding_box([100, 70], width: 100, height: 70) do
         stroke_bounds
         @monthly_report.disks.each do |disk|
           text disk.state
@@ -128,10 +128,30 @@ class MonthlyReportPDF
         end
       end
     end
-
   end
 
   def antivirus
+    bounding_box([50, 320], width: 500, height: 70) do
+      stroke_bounds
+      text 'Protection Virale et Nuisible :', style: :bold, size: 16
+
+      bounding_box([0, 40], width: 120, height: 40) do
+        stroke_bounds
+        text 'Logiciel fonctionnel :', style: :bold
+        text 'Logiciel à jour (<5jrs) :', style: :bold
+      end
+
+      bounding_box([120, 40], width: 80, height: 40) do
+        stroke_bounds
+        text %w(oui non).sample
+        text %w(oui non).sample
+      end
+
+      bounding_box([200, 40], width: 150, height: 40) do
+        stroke_bounds
+        text 'MAJ manuelle'
+      end
+    end
   end
 
   def notes
