@@ -1,6 +1,8 @@
 1.3.0 (VMs)
 -----------
 
+- ticket duration min 0 in admin
+- All the VM stuff
 - new disk model
 - add STI to assets
 - avoid n+1 queries in tickets index
