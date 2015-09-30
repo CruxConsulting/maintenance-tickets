@@ -16,3 +16,4 @@
 .pryrc
 latest.dump
 .envrc
+public/uploads/*
