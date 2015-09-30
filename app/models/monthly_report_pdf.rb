@@ -7,6 +7,7 @@ class MonthlyReportPDF
     @document = Prawn::Document.new page_size: 'A4',
                                     margin: [20, 20, 20, 20]
 
+    # stroke_axis
     setup_defaults
   end
 
@@ -17,7 +18,8 @@ class MonthlyReportPDF
   def background
     image(
       (Rails.public_path + 'images/monthly_report_background.jpg').to_s,
-      at: [bounds.left, bounds.top]
+      at: [bounds.left, bounds.top],
+      width: 550
     )
   end
 
@@ -123,13 +125,22 @@ class MonthlyReportPDF
         end
       end
 
-      bounding_box([200, 70], width: 150, height: 70) do
+      bounding_box([200, 70], width: 120, height: 70) do
         # stroke_bounds
-        text "Nombre de disques HS: #{@monthly_report.hard_drives_down}"
+        text 'Nombre de disques HS:', style: :bold
         @monthly_report.disks.each do |disk|
-          text "Capacité restante: #{disk.storage_left} Go"
+          text 'Capacité restante:', style: :bold
         end
       end
+
+      bounding_box([320, 70], width: 150, height: 70) do
+        # stroke_bounds
+        text @monthly_report.hard_drives_down.to_s
+        @monthly_report.disks.each do |disk|
+          text "#{disk.storage_left} Go"
+        end
+      end
+
     end
   end
 
