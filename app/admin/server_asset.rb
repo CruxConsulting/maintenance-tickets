@@ -21,7 +21,12 @@ ActiveAdmin.register ServerAsset do
     column :expiration_date do |resource|
       l resource.expiration_date, format: :long
     end
-    actions
+
+    actions do |resource|
+      link_to MonthlyReport.model_name.human(count: 2),
+              admin_server_asset_monthly_reports_path(resource),
+              class: 'member_link'
+    end
   end
 
   show do

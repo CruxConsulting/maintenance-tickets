@@ -2,6 +2,9 @@ fr:
 
   activerecord:
     models:
+      monthly_report:
+        one: Visite mensuelle
+        other: Visites mensuelles
       maintenance_ticket:
         one: Ticket de maintenance
         other: Tickets de maintenance
@@ -26,6 +29,16 @@ fr:
         other: Disques Durs
 
     attributes:
+      monthly_report:
+        server_asset: Serveur
+        tech: Intervenant
+        notes: Remarques
+        last_backup_state: État de la veille
+        last_backup_reason: Raison
+        previous_backups_state: État des derniers jours
+        previous_backups_reason: Raison principale
+        restore_state: Résultat
+        restore_reason: Raison
       admin_user:
         username: Login
       maintenance_ticket:

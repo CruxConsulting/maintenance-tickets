@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150924135958) do
+ActiveRecord::Schema.define(version: 20150930083029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,14 +73,14 @@ ActiveRecord::Schema.define(version: 20150924135958) do
 
   create_table "disks", force: :cascade do |t|
     t.string   "name"
-    t.integer  "total_storage", default: 0
-    t.integer  "used_storage",  default: 0
-    t.integer  "asset_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "total_storage",   default: 0
+    t.integer  "used_storage",    default: 0
+    t.integer  "server_asset_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
-  add_index "disks", ["asset_id"], name: "index_disks_on_asset_id", using: :btree
+  add_index "disks", ["server_asset_id"], name: "index_disks_on_server_asset_id", using: :btree
 
   create_table "maintenance_tickets", force: :cascade do |t|
     t.string   "maintained_by",     limit: 255
@@ -97,5 +97,22 @@ ActiveRecord::Schema.define(version: 20150924135958) do
     t.string   "assigned_to",                   default: ["Volodia"],                    array: true
   end
 
-  add_foreign_key "disks", "assets"
+  create_table "monthly_reports", force: :cascade do |t|
+    t.integer  "server_asset_id"
+    t.date     "date"
+    t.string   "pdf"
+    t.string   "tech",                    default: "Thierry"
+    t.string   "last_backup_state"
+    t.text     "last_backup_reason"
+    t.string   "previous_backups_state"
+    t.text     "previous_backups_reason"
+    t.string   "restore_state"
+    t.text     "restore_reason"
+    t.text     "notes"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+  end
+
+  add_index "monthly_reports", ["server_asset_id"], name: "index_monthly_reports_on_server_asset_id", using: :btree
+
 end
