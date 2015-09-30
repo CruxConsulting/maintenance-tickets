@@ -31,9 +31,11 @@ class MonthlyReport < ActiveRecord::Base
   def to_pdf
     pdf = MonthlyReportPDF.new self
 
+    pdf.stroke_axis
+
     pdf.background
-    # pdf.cartouche
-    # pdf.backup
+    pdf.cartouche
+    pdf.backup
     # pdf.restore
     # pdf.disks
     # pdf.antivirus
