@@ -68,7 +68,9 @@ ActiveAdmin.register MonthlyReport do
 
     panel 'Remarques' do
       attributes_table_for resource do
-        row :notes
+        row :notes do
+          simple_format resource.notes
+        end
       end
     end
 
@@ -127,7 +129,7 @@ ActiveAdmin.register MonthlyReport do
     end
 
     f.inputs 'Remarques' do
-      f.input :notes, label: false
+      f.input :notes, input_html: {rows: 3}
     end
 
     f.actions
