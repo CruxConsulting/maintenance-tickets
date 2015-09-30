@@ -3,10 +3,9 @@ ActiveAdmin.register MonthlyReport do
   belongs_to :server_asset
 
   member_action :save_pdf do
-    notice = resource.pdf? ? 'PDF updated' : 'PDF saved'
     resource.save_pdf
-    redirect_to admin_server_asset_monthly_reports_path(resource.server_asset),
-                notice: notice
+    redirect_to resource.pdf.url
+
   end
 
   action_item :save_pdf, only: :show do
