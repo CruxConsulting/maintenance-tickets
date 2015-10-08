@@ -97,6 +97,12 @@ ActiveAdmin.register MonthlyReport do
       end
     end
 
+    panel '' do
+      attributes_table_for resource do
+        row :additional_recipients
+      end
+    end
+
     panel 'PDF' do
       link_to resource['pdf'], resource.pdf.url if resource.pdf?
     end
@@ -162,6 +168,10 @@ ActiveAdmin.register MonthlyReport do
 
     f.inputs 'Remarques' do
       f.input :notes, input_html: {rows: 3}
+    end
+
+    f.inputs '' do
+      f.input :additional_recipients, hint: 'séparés par une virgule'
     end
 
     f.actions

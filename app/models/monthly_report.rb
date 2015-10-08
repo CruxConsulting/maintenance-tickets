@@ -28,6 +28,15 @@ class MonthlyReport < ActiveRecord::Base
     [client_name, server_asset_name, display_name].join('-')
   end
 
+  def recipients
+    additional_recipients
+      .split(',')
+      .compact
+      .map(&:strip)
+      .uniq <<
+      client.email
+  end
+
   # @return [MonthlyReportPDF]
   def to_pdf
     pdf = MonthlyReportPDF.new self

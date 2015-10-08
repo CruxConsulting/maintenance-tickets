@@ -43,6 +43,7 @@ fr:
         hard_drives_down: Nb de disques HS
         software_working: Logiciel fonctionnel
         licence_up_to_date: "Logiciel à jour (<5jrs)"
+        additional_recipients: 'Destinataires complémentaires'
       admin_user:
         username: Login
       maintenance_ticket:
