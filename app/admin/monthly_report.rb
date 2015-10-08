@@ -23,7 +23,18 @@ ActiveAdmin.register MonthlyReport do
       l resource.date, format: '%B %Y'
     end
 
-    actions
+    actions do |resource|
+      if resource.pdf?
+        link_to 'PDF', resource.pdf.url, class: 'member_link'
+      else
+        link_to 'Enregistrer le PDF',
+                save_pdf_admin_server_asset_monthly_report_path(
+                  resource.server_asset,
+                  resource
+                ),
+                class: 'member_link'
+      end
+    end
   end
 
   show do
