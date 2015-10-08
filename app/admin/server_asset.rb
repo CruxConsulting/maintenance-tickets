@@ -70,7 +70,7 @@ ActiveAdmin.register ServerAsset do
       f.input :expiration_date
     end
 
-    f.has_many :disks do |ff|
+    f.has_many :disks, allow_destroy: true do |ff|
       ff.input :name
       ff.input :total_storage, hint: 'Go'
       ff.input :used_storage, hint: 'Go'
