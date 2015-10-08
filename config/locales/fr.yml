@@ -82,7 +82,7 @@ fr:
         state: État
         name: Partition
         total_storage: Capacité totale
-        used_storage: Capacité utilisée
+        storage_left: Capacité restante
 
   formtastic:
     :yes: 'Oui'

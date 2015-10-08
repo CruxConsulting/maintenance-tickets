@@ -50,11 +50,8 @@ ActiveAdmin.register ServerAsset do
         column 'Capacité totale' do |r|
           "#{r.total_storage} Go" if r.total_storage
         end
-        column 'Capacité utilisée' do |r|
-          "#{r.used_storage} Go" if r.used_storage
-        end
         column 'Capacité restante' do |r|
-          "#{r.storage_left} Go" if r.storage_left
+          "#{r.storage_left || r.total_storage} Go"
         end
         column 'État', :state
       end
@@ -73,7 +70,7 @@ ActiveAdmin.register ServerAsset do
     f.has_many :disks, allow_destroy: true do |ff|
       ff.input :name
       ff.input :total_storage, hint: 'Go'
-      ff.input :used_storage, hint: 'Go'
+      ff.input :storage_left, hint: 'Go'
       ff.input :state, as: :radio, collection: Disk::STATES
     end
 
