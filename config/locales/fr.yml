@@ -30,6 +30,7 @@ fr:
 
     attributes:
       monthly_report:
+        client_email: 'Email du client'
         server_asset: Serveur
         tech: Intervenant
         notes: Remarques

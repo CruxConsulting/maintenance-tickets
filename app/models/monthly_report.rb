@@ -17,7 +17,7 @@ class MonthlyReport < ActiveRecord::Base
 
   mount_uploader :pdf, PDFUploader
 
-  delegate :id, :name, to: :client, prefix: true
+  delegate :id, :name, :email, to: :client, prefix: true
   delegate :name, to: :server_asset, prefix: true
 
   def display_name

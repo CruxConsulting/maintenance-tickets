@@ -173,8 +173,9 @@ ActiveAdmin.register MonthlyReport do
       f.input :notes, input_html: {rows: 3}
     end
 
-    f.inputs '' do
-      f.input :additional_recipients, hint: 'séparés par une virgule'
+    f.inputs 'Destinataires' do
+      f.input :client_email, input_html: {disabled: true}, hint: 'indiqué pour rappel'
+      f.input :additional_recipients, hint: 'emails séparés par une virgule'
     end
 
     f.actions
