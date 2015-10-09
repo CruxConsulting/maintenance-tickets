@@ -5,7 +5,20 @@ ActiveAdmin.register MonthlyReport do
   member_action :save_pdf do
     resource.save_pdf
     redirect_to resource.pdf.url
+  end
 
+  member_action :send_pdf do
+    MaintenanceTicketMailer
+      .send_montly_report(resource)
+      .deliver_now
+
+    redirect_to(
+      admin_server_asset_monthly_report_path(
+        resource.server_asset,
+        resource
+      ),
+      notice: 'La Visie Mensuelle a été envoyée'
+    )
   end
 
   action_item :save_pdf, only: :show do
@@ -14,6 +27,21 @@ ActiveAdmin.register MonthlyReport do
               resource.server_asset,
               resource
             )
+  end
+
+  action_item :save_pdf, only: :show do
+    if resource.pdf?
+      path = send_pdf_admin_server_asset_monthly_report_path(
+        resource.server_asset,
+        resource
+      )
+      css = {}
+    else
+      path = 'javascript:void(0)'
+      css = {class: 'disabled'}
+    end
+
+    link_to 'Envoyer le PDF', path, css
   end
 
   config.sort_order = 'date_desc'
