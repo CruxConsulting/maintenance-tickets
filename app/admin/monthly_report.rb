@@ -130,14 +130,12 @@ ActiveAdmin.register MonthlyReport do
               as: :radio,
               collection: resource.class::BACKUP_STATES
 
-      f.input :last_backup_reason,
-              input_html: {rows: 1}
+      f.input :last_backup_reason, as: :string
       f.input :previous_backups_state,
               as: :radio,
               collection: resource.class::BACKUP_STATES
 
-      f.input :previous_backups_reason,
-              input_html: {rows: 1}
+      f.input :previous_backups_reason, as: :string
     end
 
     f.inputs 'Restauration' do
@@ -145,8 +143,7 @@ ActiveAdmin.register MonthlyReport do
               as: :radio,
               collection: resource.class::BACKUP_STATES
 
-      f.input :restore_reason,
-              input_html: {rows: 1}
+      f.input :restore_reason, as: :string
     end
 
     f.inputs 'Éléments fonctionnels' do
