@@ -34,10 +34,10 @@ class MonthlyReportPDF
 
     bounding_box([200, 700], width: 100, height: 80) do
       # stroke_bounds
-      text 'Date:', style: :bold
-      text 'Nom du client:', style: :bold
-      text 'Intervenant:', style: :bold
-      text 'Nom Serveur:', style: :bold
+      text 'Date :',          style: :bold
+      text 'Nom du client :', style: :bold
+      text 'Intervenant :',   style: :bold
+      text 'Nom Serveur :',   style: :bold
     end
 
     bounding_box([300, 700], width: 250, height: 80) do
@@ -56,8 +56,8 @@ class MonthlyReportPDF
 
       bounding_box([0, 70], width: 100, height: 50) do
         # stroke_bounds
-        text 'Veille:', style: :bold
-        text 'Derniers jours:', style: :bold
+        text 'Veille :', style: :bold
+        text 'Derniers jours :', style: :bold
       end
 
       bounding_box([120, 70], width: 100, height: 50) do
@@ -68,8 +68,8 @@ class MonthlyReportPDF
 
       bounding_box([200, 70], width: 100, height: 50) do
         # stroke_bounds
-        text 'Raison:', style: :bold
-        text 'Raison principale:', style: :bold
+        text 'Raison :', style: :bold
+        text 'Raison principale :', style: :bold
       end
 
       bounding_box([300, 70], width: 250, height: 50) do
@@ -83,11 +83,11 @@ class MonthlyReportPDF
   def restore
     bounding_box([BLOCKS_INDENTATION, 520], width: 500, height: 50) do
       # stroke_bounds
-      text 'Restauration:', style: :bold, size: 16
+      text 'Restauration :', style: :bold, size: 16
 
       bounding_box([0, 20], width: 80, height: 20) do
         # stroke_bounds
-        text 'Résultat:', style: :bold
+        text 'Résultat :', style: :bold
       end
 
       bounding_box([120, 20], width: 70, height: 20) do
@@ -97,7 +97,7 @@ class MonthlyReportPDF
 
       bounding_box([200, 20], width: 100, height: 20) do
         # stroke_bounds
-        text 'Raison:', style: :bold
+        text 'Raison :', style: :bold
       end
 
       bounding_box([300, 20], width: 250, height: 20) do
@@ -114,7 +114,7 @@ class MonthlyReportPDF
 
       bounding_box([0, 70], width: 100, height: 70) do
         # stroke_bounds
-        text 'Disque durs:', style: :bold
+        text 'Disque durs :', style: :bold
         @monthly_report.disks.each do |disk|
           text "Espace partition #{disk.name}", style: :bold
         end
@@ -130,9 +130,9 @@ class MonthlyReportPDF
 
       bounding_box([200, 70], width: 120, height: 70) do
         # stroke_bounds
-        text 'Nb disques HS:', style: :bold
+        text 'Nb disques HS :', style: :bold
         @monthly_report.disks.each do |disk|
-          text 'Capacité restante:', style: :bold
+          text 'Capacité restante :', style: :bold
         end
       end
 
