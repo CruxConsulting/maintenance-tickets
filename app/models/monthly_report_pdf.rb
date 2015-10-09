@@ -69,7 +69,7 @@ class MonthlyReportPDF
       bounding_box([200, 70], width: 100, height: 50) do
         # stroke_bounds
         text 'Raison :', style: :bold
-        text 'Raison principale :', style: :bold
+        text 'Raison :', style: :bold
       end
 
       bounding_box([300, 70], width: 250, height: 50) do

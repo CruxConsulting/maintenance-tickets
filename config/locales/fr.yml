@@ -37,7 +37,7 @@ fr:
         last_backup_state: État de la veille
         last_backup_reason: Raison
         previous_backups_state: État des derniers jours
-        previous_backups_reason: Raison principale
+        previous_backups_reason: Raison
         restore_state: Résultat
         restore_reason: Raison
         hard_drives_state: Disque durs
