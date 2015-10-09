@@ -158,7 +158,7 @@ ActiveAdmin.register MonthlyReport do
               input_html: {min: 0}
 
       f.has_many :server_asset, new_record: false, heading: false do |a|
-        a.has_many :disks do |ff|
+        a.has_many :disks, new_record: false do |ff|
           ff.input :name
           ff.input :total_storage, hint: 'Go'
           ff.input :storage_left, hint: 'Go'
