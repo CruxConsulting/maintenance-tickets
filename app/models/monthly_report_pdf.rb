@@ -10,7 +10,7 @@ class MonthlyReportPDF
     @document = Prawn::Document.new page_size: 'A4',
                                     margin: [20, 20, 20, 20]
 
-    stroke_axis
+    # stroke_axis
     setup_defaults
   end
 
