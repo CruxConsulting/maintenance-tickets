@@ -2,12 +2,15 @@ class MonthlyReportPDF
   include Prawn::View
   include ActionView::Helpers::NumberHelper
 
+  # left margin for backup, restore, etc blocks
+  BLOCKS_INDENTATION = 80
+
   def initialize(monthly_report)
     @monthly_report = monthly_report
     @document = Prawn::Document.new page_size: 'A4',
                                     margin: [20, 20, 20, 20]
 
-    # stroke_axis
+    stroke_axis
     setup_defaults
   end
 
@@ -47,7 +50,7 @@ class MonthlyReportPDF
   end
 
   def backup
-    bounding_box([50, 600], width: 500, height: 100) do
+    bounding_box([BLOCKS_INDENTATION, 600], width: 500, height: 100) do
       # stroke_bounds
       text 'Sauvegarde :', style: :bold, size: 16
 
@@ -78,7 +81,7 @@ class MonthlyReportPDF
   end
 
   def restore
-    bounding_box([50, 520], width: 500, height: 50) do
+    bounding_box([BLOCKS_INDENTATION, 520], width: 500, height: 50) do
       # stroke_bounds
       text 'Restauration:', style: :bold, size: 16
 
@@ -105,7 +108,7 @@ class MonthlyReportPDF
   end
 
   def disks
-    bounding_box([50, 440], width: 500, height: 100) do
+    bounding_box([BLOCKS_INDENTATION, 440], width: 500, height: 100) do
       # stroke_bounds
       text 'Elements fonctionnels :', style: :bold, size: 16
 
@@ -145,7 +148,7 @@ class MonthlyReportPDF
   end
 
   def antivirus
-    bounding_box([50, 320], width: 500, height: 70) do
+    bounding_box([BLOCKS_INDENTATION, 320], width: 500, height: 70) do
       # stroke_bounds
       text 'Protection Virale et Nuisible :', style: :bold, size: 16
 
@@ -165,7 +168,7 @@ class MonthlyReportPDF
   end
 
   def notes
-    bounding_box([50, 240], width: 500, height: 70) do
+    bounding_box([BLOCKS_INDENTATION, 240], width: 500, height: 70) do
       # stroke_bounds
       text 'Remarques :', style: :bold, size: 16
 
