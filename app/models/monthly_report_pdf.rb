@@ -168,7 +168,7 @@ class MonthlyReportPDF
   end
 
   def notes
-    bounding_box([BLOCKS_INDENTATION, 240], width: 500, height: 70) do
+    bounding_box([BLOCKS_INDENTATION, 240], width: 470, height: 140) do
       # stroke_bounds
       text 'Remarques :', style: :bold, size: 16
 

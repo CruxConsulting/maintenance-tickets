@@ -204,7 +204,7 @@ ActiveAdmin.register MonthlyReport do
     end
 
     f.inputs 'Remarques' do
-      f.input :notes, input_html: {rows: 3}
+      f.input :notes, input_html: {rows: 8}, hint: '8 lignes max'
     end
 
     f.inputs 'Destinataires' do
