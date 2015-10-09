@@ -12,7 +12,7 @@ class MonthlyReport < ActiveRecord::Base
   validates_presence_of :server_asset
 
   after_initialize do
-    self.date = Time.zone.today unless persisted?
+    self.date ||= Time.zone.today unless persisted?
   end
 
   mount_uploader :pdf, PDFUploader
