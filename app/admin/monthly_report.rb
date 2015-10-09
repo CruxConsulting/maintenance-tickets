@@ -16,6 +16,8 @@ ActiveAdmin.register MonthlyReport do
             )
   end
 
+  config.sort_order = 'date_desc'
+
   index do
     column :client
     column :server_asset
