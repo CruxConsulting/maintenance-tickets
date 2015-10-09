@@ -112,7 +112,9 @@ ActiveAdmin.register MonthlyReport do
   end
 
   form do |f|
+
     f.inputs 'Cartouche' do
+      f.input :server_asset_id, as: :hidden
       f.input :date,
               as: :date_select,
               order: [:month, :year],
