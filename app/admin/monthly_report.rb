@@ -157,11 +157,13 @@ ActiveAdmin.register MonthlyReport do
       f.input :hard_drives_down,
               input_html: {min: 0}
 
-      f.has_many :disks, new_record: false do |ff|
-        ff.input :name
-        ff.input :total_storage, hint: 'Go'
-        ff.input :storage_left, hint: 'Go'
-        ff.input :state, as: :radio, collection: Disk::STATES
+      f.has_many :server_asset, new_record: false, heading: false do |a|
+        a.has_many :disks do |ff|
+          ff.input :name
+          ff.input :total_storage, hint: 'Go'
+          ff.input :storage_left, hint: 'Go'
+          ff.input :state, as: :radio, collection: Disk::STATES
+        end
       end
     end
 

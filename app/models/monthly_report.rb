@@ -7,7 +7,7 @@ class MonthlyReport < ActiveRecord::Base
   has_one :client, through: :server_asset
   has_many :disks, through: :server_asset
 
-  accepts_nested_attributes_for :disks
+  accepts_nested_attributes_for :server_asset
 
   validates_presence_of :server_asset
 

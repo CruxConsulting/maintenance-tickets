@@ -25,8 +25,8 @@ fr:
         other: Autres objet
       antivirus_asset: 'Antivirus'
       disk:
-        one: Disque Dur
-        other: Disques Durs
+        one: Partition
+        other: Partitions
 
     attributes:
       monthly_report:
