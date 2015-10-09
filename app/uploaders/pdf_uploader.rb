@@ -1,6 +1,8 @@
 class PDFUploader < CarrierWave::Uploader::Base
 
-  include Cloudinary::CarrierWave
+  if Rails.env.production?
+    include Cloudinary::CarrierWave
+  end
 
   def extension_white_list
     %w(pdf)
