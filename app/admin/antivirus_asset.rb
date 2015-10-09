@@ -1,12 +1,6 @@
-ActiveAdmin.register Asset do
+ActiveAdmin.register AntivirusAsset do
 
-  client_select2_options = {
-    placeholder: "Choisir un client",
-    resourcesPath: "/admin/clients",
-    queryKey: "q[name_cont]",
-    order: "name_asc",
-    resultFormat: "data.name"
-  }
+  menu parent: 'Objets'
 
   filter :client
   filter :name
@@ -20,9 +14,7 @@ ActiveAdmin.register Asset do
   index do
     column :client
     column :name
-    column :description do |resource|
-      simple_format resource.description
-    end
+    column :quantity
     column :expiration_date do |resource|
       l resource.expiration_date, format: :long
     end
@@ -33,9 +25,7 @@ ActiveAdmin.register Asset do
     attributes_table do
       row :client
       row :name
-      row :description do
-        simple_format resource.description
-      end
+      row :quantity
       row :expiration_date do
         l resource.expiration_date, format: :long
       end
@@ -46,7 +36,7 @@ ActiveAdmin.register Asset do
     f.inputs do
       f.input :client
       f.input :name
-      f.input :description
+      f.input :quantity
       f.input :expiration_date
     end
 

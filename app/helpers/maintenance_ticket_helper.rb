@@ -7,7 +7,6 @@ module MaintenanceTicketHelper
     first_tech = ticket.assigned_to.first
     return unless first_tech
 
-    filename = "carte-#{I18n.transliterate(first_tech).downcase}.jpg"
-    root_url + image_path(filename)
+    tech_visit_card_url(first_tech)
   end
 end

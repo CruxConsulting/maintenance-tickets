@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915152716) do
+ActiveRecord::Schema.define(version: 20151008150501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 20150915152716) do
     t.date     "expiration_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type"
+    t.integer  "quantity"
   end
 
   add_index "assets", ["client_id"], name: "index_assets_on_client_id", using: :btree
@@ -68,6 +70,18 @@ ActiveRecord::Schema.define(version: 20150915152716) do
     t.datetime "updated_at",             null: false
     t.text     "comment"
   end
+
+  create_table "disks", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "total_storage",   default: 0
+    t.integer  "server_asset_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "state"
+    t.integer  "storage_left"
+  end
+
+  add_index "disks", ["server_asset_id"], name: "index_disks_on_server_asset_id", using: :btree
 
   create_table "maintenance_tickets", force: :cascade do |t|
     t.string   "maintained_by",     limit: 255
@@ -83,5 +97,28 @@ ActiveRecord::Schema.define(version: 20150915152716) do
     t.text     "confidential_info"
     t.string   "assigned_to",                   default: ["Volodia"],                    array: true
   end
+
+  create_table "monthly_reports", force: :cascade do |t|
+    t.integer  "server_asset_id"
+    t.date     "date"
+    t.string   "pdf"
+    t.string   "tech",                    default: "Thierry"
+    t.string   "last_backup_state"
+    t.text     "last_backup_reason"
+    t.string   "previous_backups_state"
+    t.text     "previous_backups_reason"
+    t.string   "restore_state"
+    t.text     "restore_reason"
+    t.text     "notes"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.string   "hard_drives_state",       default: "Ok"
+    t.integer  "hard_drives_down",        default: 0
+    t.boolean  "software_working",        default: true,      null: false
+    t.boolean  "licence_up_to_date",      default: true,      null: false
+    t.string   "additional_recipients"
+  end
+
+  add_index "monthly_reports", ["server_asset_id"], name: "index_monthly_reports_on_server_asset_id", using: :btree
 
 end

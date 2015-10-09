@@ -4,7 +4,7 @@ ActiveAdmin.register Client do
   filter :email
   filter :comment
 
-  config.sort_order = "name_asc"
+  config.sort_order = 'name_asc'
 
   # Views
   #######
@@ -24,14 +24,20 @@ ActiveAdmin.register Client do
       end
     end
 
-    panel "Objets" do
-      table_for resource.assets do
+    panel 'Objets' do
+      table_for resource.assets.order(:type, expiration_date: :desc) do
+        column :type do |asset|
+          asset.class.model_name.human
+        end
         column 'Nom', :name
         column :description do |asset|
           simple_format asset.description
         end
         column "Date d'expiration", :expiration_date do |asset|
           l asset.expiration_date, format: :long
+        end
+        column do |asset|
+          link_to 'Modifier', [:edit, :admin, asset]
         end
       end
     end
@@ -41,7 +47,7 @@ ActiveAdmin.register Client do
     f.inputs do
       f.input :name
       f.input :email
-      f.input :comment, :input_html => { :rows => 10 }
+      f.input :comment, input_html: { rows: 10 }
     end
 
     f.actions
