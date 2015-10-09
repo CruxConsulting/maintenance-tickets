@@ -28,7 +28,9 @@ AdminAsconseilEu::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => "admin-asconseil.dev" }
+  config.action_mailer.default_url_options = {
+    host: 'admin.lvh.me:5000'
+  }
 
   config.eager_load = false
 
