@@ -16,7 +16,15 @@ class MaintenanceTicketMailer < ActionMailer::Base
     @monthly_report              = monthly_report
     attachment_name              = 'Visite mensuelle - ' \
                                    "#{monthly_report.display_name}.pdf"
-    attachment_content           = monthly_report.pdf.file.read
+
+    # see https://github.com/cloudinary/cloudinary_gem/issues/175
+    if monthly_report.pdf.class.storage == Cloudinary::CarrierWave::Storage
+      attachment_content =
+        Cloudinary::Downloader.download monthly_report.pdf.full_public_id
+    else
+      attachment_content = monthly_report.pdf.file.read
+    end
+
     attachments[attachment_name] = attachment_content
 
     mail to: monthly_report.recipients,
