@@ -1,6 +1,7 @@
 1.3.1
 -----
 
+- fix pdf mail attachment bug when using cloudinary
 - typo
 
 1.3.0 (VMs)
