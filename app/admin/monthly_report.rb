@@ -17,7 +17,7 @@ ActiveAdmin.register MonthlyReport do
         resource.server_asset,
         resource
       ),
-      notice: 'La Visie Mensuelle a été envoyée'
+      notice: 'La visite Mensuelle a été envoyée'
     )
   end
 
