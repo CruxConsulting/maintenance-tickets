@@ -27,6 +27,13 @@ class MaintenanceTicketMailer < ActionMailer::Base
 
     attachments[attachment_name] = attachment_content
 
+    @localized_montly_remort_name =
+      if [4, 8, 10].include?(monthly_report.date.month)
+        "d'#{monthly_report.display_name}"
+      else
+        "de #{monthly_report.display_name}"
+      end
+
     mail to: monthly_report.recipients,
          bcc: 'direction@asconseil.eu',
          subject: "Visite Mensuelle : #{monthly_report.display_name}"

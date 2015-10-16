@@ -44,7 +44,6 @@ fr:
         hard_drives_down: Nb de disques HS
         software_working: Logiciel fonctionnel
         licence_up_to_date: "Logiciel à jour (<5jrs)"
-        additional_recipients: 'Destinataires complémentaires'
       admin_user:
         username: Login
       maintenance_ticket:
@@ -75,7 +74,7 @@ fr:
       mail_software_asset:
         quantity: Quantité d'emails
       server_asset:
-        name: Numéro de série
+        name: Nom du serveur
         quantity: Capacité mémoire
       antivirus_asset:
         quantity: Quantité

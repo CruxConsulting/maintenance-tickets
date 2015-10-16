@@ -133,12 +133,6 @@ ActiveAdmin.register MonthlyReport do
       end
     end
 
-    panel '' do
-      attributes_table_for resource do
-        row :additional_recipients
-      end
-    end
-
     panel 'PDF' do
       link_to resource['pdf'], resource.pdf.url if resource.pdf?
     end
@@ -205,11 +199,6 @@ ActiveAdmin.register MonthlyReport do
 
     f.inputs 'Remarques' do
       f.input :notes, input_html: {rows: 8}, hint: '8 lignes max'
-    end
-
-    f.inputs 'Destinataires' do
-      f.input :client_email, input_html: {disabled: true}, hint: 'indiqué pour rappel'
-      f.input :additional_recipients, hint: 'emails séparés par une virgule'
     end
 
     f.actions
