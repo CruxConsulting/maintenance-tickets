@@ -56,4 +56,17 @@ class MonthlyReport < ActiveRecord::Base
     # remove the tmp file as it should be saved in the uploader now
     path.unlink
   end
+
+  def additional_recipients
+    case client_name
+    when 'Sogexfo'
+      %w(gb@sogexfo.com sl@sogexfo.com sb@sogexfo.com od@sogexfo.com)
+    else
+      []
+    end
+  end
+
+  def recipients
+    additional_recipients << client_email
+  end
 end

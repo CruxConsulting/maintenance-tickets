@@ -1,6 +1,7 @@
 1.3.2
 -----
 
+- only add additional recipients to sogexfo VMs
 - Revert "additional_recipients for VMs"
 
 1.3.1
