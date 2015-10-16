@@ -74,7 +74,7 @@ fr:
       mail_software_asset:
         quantity: Quantité d'emails
       server_asset:
-        name: Numéro de série
+        name: Nom du serveur
         quantity: Capacité mémoire
       antivirus_asset:
         quantity: Quantité
