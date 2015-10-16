@@ -1,6 +1,7 @@
 1.3.2
 -----
 
+- correct send vm email content
 - rename ServerAsset.name from "Numéro de série" to "Nom du serveur"
 - only add additional recipients to sogexfo VMs
 - Revert "additional_recipients for VMs"
