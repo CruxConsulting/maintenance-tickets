@@ -1,3 +1,8 @@
+1.3.2
+-----
+
+- Revert "additional_recipients for VMs"
+
 1.3.1
 -----
 
