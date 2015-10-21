@@ -74,6 +74,7 @@ fr:
       mail_software_asset:
         quantity: Quantité d'emails
       server_asset:
+        expiration_date: "Date d'expiration"
         name: Nom du serveur
         quantity: Capacité mémoire
       antivirus_asset:
