@@ -1,6 +1,7 @@
 1.3.3
 -----
 
+- update send_montly_report email content
 - remove 'quantity' from server_assets index
 
 1.3.2
