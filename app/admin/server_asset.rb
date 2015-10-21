@@ -17,7 +17,6 @@ ActiveAdmin.register ServerAsset do
     column :description do |resource|
       simple_format resource.description
     end
-    column :quantity
     column :expiration_date do |resource|
       l resource.expiration_date, format: :long
     end

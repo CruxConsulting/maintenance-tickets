@@ -1,3 +1,8 @@
+1.3.3
+-----
+
+- remove 'quantity' from server_assets index
+
 1.3.2
 -----
 
