@@ -1,6 +1,7 @@
 1.3.4
 -----
 
+- add missing keys in fr.yml
 - add description to all assets forms and show
 
 1.3.3

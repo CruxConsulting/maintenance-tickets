@@ -68,17 +68,24 @@ fr:
         name: Nom
         expiration_date: "Date d'expiration"
       antivirus_asset:
+        expiration_date: "Date d'expiration"
         quantity: Quantité
+        name: Nom
       domain_asset:
+        name: Nom
+        expiration_date: "Date d'expiration"
         quantity: Quantité d'emails
       mail_software_asset:
+        name: Nom
+        expiration_date: "Date d'expiration"
         quantity: Quantité d'emails
       server_asset:
         expiration_date: "Date d'expiration"
         name: Nom du serveur
         quantity: Capacité mémoire
-      antivirus_asset:
-        quantity: Quantité
+      firewall_asset:
+        expiration_date: "Date d'expiration"
+        name: Nom
       disk:
         state: État
         name: Partition
