@@ -27,9 +27,11 @@ ActiveAdmin.register UncategorizedAsset do
     attributes_table do
       row :client
       row :name
-      row :description
       row :expiration_date do
         l resource.expiration_date, format: :long
+      end
+      row :description do
+        simple_format resource.description
       end
     end
   end
@@ -38,8 +40,8 @@ ActiveAdmin.register UncategorizedAsset do
     f.inputs do
       f.input :client
       f.input :name
-      f.input :description
       f.input :expiration_date
+      f.input :description
     end
 
     f.actions
