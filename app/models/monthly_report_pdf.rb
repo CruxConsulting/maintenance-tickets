@@ -120,7 +120,7 @@ class MonthlyReportPDF
         end
       end
 
-      bounding_box([120, 70], width: 100, height: 70) do
+      bounding_box([100, 70], width: 70, height: 70) do
         # stroke_bounds
         text @monthly_report.hard_drives_state
         @monthly_report.disks.each do |disk|
@@ -128,17 +128,33 @@ class MonthlyReportPDF
         end
       end
 
-      bounding_box([200, 70], width: 120, height: 70) do
+      bounding_box([170, 70], width: 80, height: 70) do
         # stroke_bounds
         text 'Nb disques HS :', style: :bold
+        @monthly_report.disks.each do |disk|
+          text 'Capacité totale :', style: :bold
+        end
+      end
+
+      bounding_box([250, 70], width: 60, height: 70) do
+        # stroke_bounds
+        text @monthly_report.hard_drives_down.to_s
+        @monthly_report.disks.each do |disk|
+          text "#{disk.total_storage} Go"
+        end
+      end
+
+      bounding_box([310, 70], width: 100, height: 70) do
+        # stroke_bounds
+        text ' '
         @monthly_report.disks.each do |disk|
           text 'Capacité restante :', style: :bold
         end
       end
 
-      bounding_box([300, 70], width: 150, height: 70) do
+      bounding_box([410, 70], width: 60, height: 70) do
         # stroke_bounds
-        text @monthly_report.hard_drives_down.to_s
+        text ' '
         @monthly_report.disks.each do |disk|
           text "#{disk.storage_left} Go"
         end

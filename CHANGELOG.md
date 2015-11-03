@@ -1,6 +1,7 @@
 1.3.5
 -----
 
+- add "total_storage" to VM's PDF
 - validate presence of expiration_date on assets
 - use ldate on server assets index and show
 - new ldate helper to handle nil dates
