@@ -1,6 +1,7 @@
 1.3.5
 -----
 
+- use ldate on server assets index and show
 - new ldate helper to handle nil dates
 
 1.3.4
