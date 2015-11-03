@@ -1,3 +1,8 @@
+1.3.5
+-----
+
+- new ldate helper to handle nil dates
+
 1.3.4
 -----
 
