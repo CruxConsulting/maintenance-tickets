@@ -1,3 +1,8 @@
+1.3.6
+-----
+
+- append an extra ' ' after last_backup_reason in PDF to avoid alignment issues
+
 1.3.5
 -----
 
