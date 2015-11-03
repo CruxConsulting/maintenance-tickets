@@ -29,6 +29,9 @@ ActiveAdmin.register AntivirusAsset do
       row :expiration_date do
         l resource.expiration_date, format: :long
       end
+      row :description do
+        simple_format resource.description
+      end
     end
   end
 
@@ -38,6 +41,7 @@ ActiveAdmin.register AntivirusAsset do
       f.input :name
       f.input :quantity
       f.input :expiration_date
+      f.input :description
     end
 
     f.actions

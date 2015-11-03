@@ -17,6 +17,11 @@ class Asset < ActiveRecord::Base
     )
   }
 
+  # Validations
+  #############
+
+  validates :expiration_date, presence: true
+
   # Instance methods
   ##################
 

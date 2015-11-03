@@ -27,6 +27,9 @@ ActiveAdmin.register FirewallAsset do
       row :expiration_date do
         l resource.expiration_date, format: :long
       end
+      row :description do
+        simple_format resource.description
+      end
     end
   end
 
@@ -35,6 +38,7 @@ ActiveAdmin.register FirewallAsset do
       f.input :client
       f.input :name
       f.input :expiration_date
+      f.input :description
     end
 
     f.actions

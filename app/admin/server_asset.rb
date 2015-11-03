@@ -18,7 +18,7 @@ ActiveAdmin.register ServerAsset do
       simple_format resource.description
     end
     column :expiration_date do |resource|
-      l resource.expiration_date, format: :long
+      ldate resource.expiration_date, format: :long
     end
 
     actions do |resource|
@@ -39,7 +39,7 @@ ActiveAdmin.register ServerAsset do
         server_memory resource
       end
       row :expiration_date do
-        l resource.expiration_date, format: :long
+        ldate resource.expiration_date, format: :long
       end
     end
 

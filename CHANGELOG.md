@@ -1,3 +1,17 @@
+1.3.5
+-----
+
+- add "total_storage" to VM's PDF
+- validate presence of expiration_date on assets
+- use ldate on server assets index and show
+- new ldate helper to handle nil dates
+
+1.3.4
+-----
+
+- add missing keys in fr.yml
+- add description to all assets forms and show
+
 1.3.3
 -----
 
