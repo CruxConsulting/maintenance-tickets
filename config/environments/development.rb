@@ -29,7 +29,7 @@ AdminAsconseilEu::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = {
-    host: 'admin.lvh.me:5000'
+    host: 'admin-asconseil.lvh.me:5000'
   }
 
   config.eager_load = false
