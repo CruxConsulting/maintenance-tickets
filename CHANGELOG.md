@@ -1,3 +1,8 @@
+1.3.7
+-----
+
+- use polymorphic_url in assets_expire_soon template
+
 1.3.6
 -----
 
