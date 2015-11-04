@@ -1,3 +1,9 @@
+1.3.7
+-----
+
+- set dev mailer host to admin-asconseil.lvh.me:5000
+- use polymorphic_url in assets_expire_soon template
+
 1.3.6
 -----
 
