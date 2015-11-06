@@ -1,3 +1,9 @@
+1.3.8
+-----
+
+- display "Dernière VM" in ServerAsset's index
+- add #lastest_montly_report and #lastest_montly_report_date to ServerAsset
+
 1.3.7
 -----
 
