@@ -7,7 +7,7 @@ ActiveAdmin.register ServerAsset do
 
   controller do
     def scoped_collection
-      end_of_association_chain.includes(:client)
+      end_of_association_chain.includes(:client, :monthly_reports)
     end
   end
 
@@ -19,6 +19,9 @@ ActiveAdmin.register ServerAsset do
     end
     column :expiration_date do |resource|
       ldate resource.expiration_date, format: :long
+    end
+    column 'Dernière VM' do |resource|
+      ldate resource.lastest_montly_report_date, format: '%B %Y'
     end
 
     actions do |resource|
