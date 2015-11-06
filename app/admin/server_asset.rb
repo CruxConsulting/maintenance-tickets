@@ -21,7 +21,7 @@ ActiveAdmin.register ServerAsset do
       ldate resource.expiration_date, format: :long
     end
     column 'Dernière VM' do |resource|
-      ldate resource.lastest_montly_report_date, format: '%B %Y'
+      ldate resource.lastest_monthly_report_date, format: '%B %Y'
     end
 
     actions do |resource|

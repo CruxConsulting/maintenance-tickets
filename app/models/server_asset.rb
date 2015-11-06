@@ -7,9 +7,9 @@ class ServerAsset < Asset
   # Instance methods
   ##################
 
-  delegate :date, to: :lastest_montly_report, prefix: true, allow_nil: true
+  delegate :date, to: :lastest_monthly_report, prefix: true, allow_nil: true
 
-  def lastest_montly_report
-    monthly_reports.order(date: :desc).first
+  def lastest_monthly_report
+    monthly_reports.sort_by(&:date).last
   end
 end
