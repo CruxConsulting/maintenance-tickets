@@ -5,9 +5,27 @@ ActiveAdmin.register ServerAsset do
   filter :client
   filter :name
 
+  # config.sort_order = 'lastest_monthly_report_date_asc'
+
+  # scope 'Sans VM', :without_monthly_report
+
   controller do
     def scoped_collection
-      end_of_association_chain.includes(:client, :monthly_reports)
+      end_of_association_chain.includes(:client)
+    end
+
+    def index
+      index! do
+
+        @collection =
+          collection
+          .select('assets.*,'\
+                  'max(monthly_reports.date) as lastest_monthly_report_date')
+          .joins('LEFT OUTER JOIN "monthly_reports"'\
+                 'ON "monthly_reports"."server_asset_id" = "assets"."id"')
+          .group('assets.id')
+
+      end
     end
   end
 
@@ -20,8 +38,8 @@ ActiveAdmin.register ServerAsset do
     column :expiration_date do |resource|
       ldate resource.expiration_date, format: :long
     end
-    column 'Dernière VM' do |resource|
-      ldate resource.lastest_montly_report_date, format: '%B %Y'
+    column 'Dernière VM', sortable: 'lastest_monthly_report_date' do |resource|
+      ldate resource.lastest_monthly_report_date, format: '%B %Y'
     end
 
     actions do |resource|

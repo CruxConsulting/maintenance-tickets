@@ -4,12 +4,10 @@ class ServerAsset < Asset
 
   accepts_nested_attributes_for :disks, allow_destroy: true
 
-  # Instance methods
-  ##################
+  # Scopes
+  ########
 
-  delegate :date, to: :lastest_montly_report, prefix: true, allow_nil: true
-
-  def lastest_montly_report
-    monthly_reports.order(date: :desc).first
-  end
+  scope :without_monthly_report, -> {
+    includes(:monthly_reports).where(monthly_reports: {id: nil})
+  }
 end
