@@ -2,7 +2,7 @@
 -----
 
 - allow server ordering by lastest_monthly_report_date
-- new "without_monthly_report" model and admin scope on server_assets
+- new "without_monthly_report" model scope on server_assets
 
 1.3.8
 -----
