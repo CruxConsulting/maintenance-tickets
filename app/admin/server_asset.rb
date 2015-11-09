@@ -5,9 +5,7 @@ ActiveAdmin.register ServerAsset do
   filter :client
   filter :name
 
-  # config.sort_order = 'lastest_monthly_report_date_asc'
-
-  # scope 'Sans VM', :without_monthly_report
+  config.sort_order = 'lastest_monthly_report_date_asc'
 
   controller do
     def scoped_collection
