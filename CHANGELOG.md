@@ -1,3 +1,8 @@
+1.3.9
+-----
+
+- new "without_monthly_report" model and admin scope on server_assets
+
 1.3.8
 -----
 

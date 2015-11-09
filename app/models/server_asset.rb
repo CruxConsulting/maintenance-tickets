@@ -4,6 +4,13 @@ class ServerAsset < Asset
 
   accepts_nested_attributes_for :disks, allow_destroy: true
 
+  # Scopes
+  ########
+
+  scope :without_monthly_report, -> {
+    includes(:monthly_reports).where(monthly_reports: {id: nil})
+  }
+
   # Instance methods
   ##################
 

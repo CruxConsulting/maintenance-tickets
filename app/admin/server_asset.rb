@@ -5,6 +5,8 @@ ActiveAdmin.register ServerAsset do
   filter :client
   filter :name
 
+  scope 'Sans VM', :without_monthly_report
+
   controller do
     def scoped_collection
       end_of_association_chain.includes(:client, :monthly_reports)
