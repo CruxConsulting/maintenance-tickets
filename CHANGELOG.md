@@ -1,3 +1,8 @@
+1.3.10
+------
+
+- default order servers by lastest_monthly_report_date_asc
+
 1.3.9
 -----
 
