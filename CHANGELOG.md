@@ -1,3 +1,8 @@
+1.3.11
+------
+
+- Assets expiration_date as a datepicker
+
 1.3.10
 ------
 
