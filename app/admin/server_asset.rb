@@ -82,7 +82,7 @@ ActiveAdmin.register ServerAsset do
       f.input :name
       f.input :description
       f.input :quantity, hint: 'Go'
-      f.input :expiration_date
+      f.input :expiration_date, as: :datepicker
     end
 
     f.has_many :disks, allow_destroy: true do |ff|

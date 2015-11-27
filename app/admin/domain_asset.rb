@@ -41,7 +41,7 @@ ActiveAdmin.register DomainAsset do
       f.input :client
       f.input :name
       f.input :quantity
-      f.input :expiration_date
+      f.input :expiration_date, as: :datepicker
       f.input :description
     end
 
