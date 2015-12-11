@@ -1,5 +1,6 @@
 ActiveAdmin.register MaintenanceTicket do
 
+  config.per_page = 200
   config.sort_order = 'state_desc'
 
   # Views

@@ -1,3 +1,8 @@
+1.3.12
+------
+
+- Paginate 200 maintenance_tickets
+
 1.3.11
 ------
 
