@@ -72,7 +72,7 @@ class MonthlyReportPDF
         text 'Raison :', style: :bold
       end
 
-      bounding_box([300, 70], width: 250, height: 50) do
+      bounding_box([240, 70], width: 250, height: 50) do
         # stroke_bounds
         text @monthly_report.last_backup_reason + ' '
         text @monthly_report.previous_backups_reason
