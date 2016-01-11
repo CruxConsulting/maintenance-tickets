@@ -158,12 +158,19 @@ ActiveAdmin.register MonthlyReport do
               as: :radio,
               collection: resource.class::BACKUP_STATES
 
-      f.input :last_backup_reason, as: :string
+      f.input :last_backup_reason,
+              as: :string,
+              input_html: {maxlength: 56, size: 56},
+              hint: "56 charactères max"
+
       f.input :previous_backups_state,
               as: :radio,
               collection: resource.class::BACKUP_STATES
 
-      f.input :previous_backups_reason, as: :string
+      f.input :previous_backups_reason,
+              as: :string,
+              input_html: {maxlength: 56, size: 56},
+              hint: "56 charactères max"
     end
 
     f.inputs 'Restauration' do
