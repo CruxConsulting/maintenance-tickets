@@ -146,7 +146,7 @@ ActiveAdmin.register MonthlyReport do
       f.input :date,
               as: :date_select,
               order: [:month, :year],
-              start_year: Time.zone.today.year
+              start_year: Time.zone.today.year - 1
 
       f.input :client, input_html: {disabled: true}
       f.input :tech, as: :select, collection: ENV['TECH_PEOPLE'].split(',')
