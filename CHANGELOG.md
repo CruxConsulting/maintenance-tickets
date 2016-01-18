@@ -5,6 +5,8 @@
 
 - add 'Email' to MaintenanceTicket::MAINTAINED_BY
 
+- HACK to fix the vm creation to update the disks attributes
+
 1.3.12
 ------
 
