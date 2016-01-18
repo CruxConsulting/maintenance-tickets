@@ -7,7 +7,8 @@ class MaintenanceTicket < ActiveRecord::Base
     'Téléphone',
     'Prise de main',
     'Sur site',
-    'Atelier'
+    'Atelier',
+    'Email'
   ]
 
   STATES = [

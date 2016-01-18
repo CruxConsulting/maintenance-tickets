@@ -1,5 +1,7 @@
 ## Unreleased
 
+- add 'Email' to MaintenanceTicket::MAINTAINED_BY
+
 1.3.12
 ------
 
