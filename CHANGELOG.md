@@ -2,9 +2,7 @@
 
 - give more space for "backup reason"
 - VMs date's year now ranges from Time.zone.today.year - 1 - 1
-
 - add 'Email' to MaintenanceTicket::MAINTAINED_BY
-
 - HACK to fix the vm creation to update the disks attributes
 
 1.3.12
