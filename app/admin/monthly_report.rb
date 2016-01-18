@@ -1,5 +1,31 @@
 ActiveAdmin.register MonthlyReport do
 
+  controller do
+
+    # HACK: we override create here because with the default implementation
+    # from inherited_resources, @monthly_report would have been created with
+    # server_asset.monthly_reports.build(params['monthly_report'])
+    #
+    # While this seems OK, there is a bug I could not fix that prevents the
+    # server_assets.disks attributes to be updated with the provided params
+    #
+    # To avoid this bug, I chose to override the create action and build the
+    # @monthly_report instance directly from the MonthlyReport class
+    #
+    # TODO: find what's wrong, fix the bug and remove this extra code
+    def create
+      @monthly_report = MonthlyReport.new params['monthly_report']
+      create! do |success, _failure|
+        success.html do
+          redirect_to admin_server_asset_monthly_report_path(
+            @monthly_report.server_asset_id,
+            @monthly_report
+          )
+        end
+      end
+    end
+  end
+
   belongs_to :server_asset
 
   member_action :save_pdf do
