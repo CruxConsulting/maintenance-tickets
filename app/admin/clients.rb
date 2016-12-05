@@ -6,6 +6,8 @@ ActiveAdmin.register Client do
 
   config.sort_order = 'name_asc'
 
+  menu priority: 0
+
   # Views
   #######
 

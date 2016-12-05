@@ -3,6 +3,8 @@ ActiveAdmin.register MaintenanceTicket do
   config.per_page = 200
   config.sort_order = 'state_desc'
 
+  menu priority: 2
+
   # Views
   #######
 

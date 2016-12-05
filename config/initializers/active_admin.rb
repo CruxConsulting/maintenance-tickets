@@ -131,6 +131,12 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
+
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      menu.add label: 'Objets', priority: 1
+    end
+  end
 end
 
 def set_admin_locale
