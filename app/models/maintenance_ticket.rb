@@ -30,6 +30,8 @@ class MaintenanceTicket < ActiveRecord::Base
   #############
 
   validates :client_id, presence: true
+  validates :duration, presence: true
+  validates :maintenance_date, presence: true
 
   # Callbacks
   ###########
