@@ -1,3 +1,7 @@
+## 1.13.14
+
+- activeadmin_select2 now hosted on github
+
 ## 1.13.13
 
 - give more space for "backup reason"

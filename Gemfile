@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'https://Tx3zEy8nojpuh8JgTqUp@gem.fury.io/crux/'
 
 ruby '2.2.3'
 
@@ -17,7 +16,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'bower'
-gem 'activeadmin_select2'
+gem 'activeadmin_select2', git: 'https://github.com/bartocc/active_admin_select2.git'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'prawn'
