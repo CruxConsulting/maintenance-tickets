@@ -105,7 +105,9 @@ ActiveAdmin.register MaintenanceTicket do
 
     def create
       create! do |format|
-        format.html { redirect_to admin_maintenance_tickets_url }
+        if resource.valid?
+          format.html { redirect_to admin_maintenance_tickets_url }
+        end
       end
     end
   end

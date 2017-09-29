@@ -1,5 +1,6 @@
 ## 1.13.14
 
+- do not redirect to admin_maintenance_tickets_url if MaintenanceTicket is invalid
 - activeadmin_select2 now hosted on github
 
 ## 1.13.13
