@@ -1,5 +1,6 @@
 ## 1.13.14
 
+- change "send_ticket_infos" mail from to "nepasrepondre@asconseil.eu"
 - do not redirect to admin_maintenance_tickets_url if MaintenanceTicket is invalid
 - activeadmin_select2 now hosted on github
 

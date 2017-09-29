@@ -9,7 +9,7 @@ class MaintenanceTicketMailer < ActionMailer::Base
 
   def send_ticket_infos(ticket, recipients)
     @ticket = ticket
-    mail to: recipients, subject: send_ticket_subject
+    mail from: 'nepasrepondre@asconseil.eu', to: recipients, subject: send_ticket_subject
   end
 
   def send_montly_report(monthly_report)
