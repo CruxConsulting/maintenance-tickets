@@ -1,7 +1,7 @@
 ## 1.13.14
 
 - validate presence of duration and maintenance_date on maintenance_tickets
-- add "do not answer" message at the end of "send_ticket_infos" template
+- add red "do not answer" message at the end of "send_ticket_infos" template
 - change "send_ticket_infos" mail from to "nepasrepondre@asconseil.eu"
 - do not redirect to admin_maintenance_tickets_url if MaintenanceTicket is invalid
 - activeadmin_select2 now hosted on github
