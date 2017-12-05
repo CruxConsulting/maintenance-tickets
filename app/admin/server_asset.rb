@@ -4,6 +4,7 @@ ActiveAdmin.register ServerAsset do
 
   filter :client
   filter :name
+  filter :description
 
   config.sort_order = 'lastest_monthly_report_date_asc'
 
