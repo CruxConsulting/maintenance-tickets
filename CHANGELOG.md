@@ -1,3 +1,7 @@
+## 1.13.15 (02/02/2018)
+
+- add phone_asset
+
 ## 1.13.14
 
 - validate presence of duration and maintenance_date on maintenance_tickets
