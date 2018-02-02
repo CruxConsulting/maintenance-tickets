@@ -17,6 +17,9 @@ fr:
       firewall_asset:
         one: Firewall
         other: Firewalls
+      phone_asset:
+        one: Téléphone
+        other: Téléphones
       mail_software_asset:
         one: Logiciel de messagerie
         other: Logiciels de messagerie
@@ -84,6 +87,9 @@ fr:
         name: Nom du serveur
         quantity: Capacité mémoire
       firewall_asset:
+        expiration_date: "Date d'expiration"
+        name: Nom
+      phone_asset:
         expiration_date: "Date d'expiration"
         name: Nom
       disk:
