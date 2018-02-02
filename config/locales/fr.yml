@@ -18,8 +18,8 @@ fr:
         one: Firewall
         other: Firewalls
       phone_asset:
-        one: Téléphone
-        other: Téléphones
+        one: Téléphonie
+        other: Téléphonies
       mail_software_asset:
         one: Logiciel de messagerie
         other: Logiciels de messagerie
