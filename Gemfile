@@ -20,6 +20,7 @@ gem 'activeadmin_select2', git: 'https://github.com/bartocc/active_admin_select2
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'prawn'
+gem 'postgres_ext', github: 'shaneog/postgres_ext', branch: 'rails-5', ref: '88d46f6c14'
 
 # Test gems
 ###########

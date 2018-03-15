@@ -1,3 +1,7 @@
+## 1.13.16 (15/03/2018)
+
+- implement search by assigned_to
+
 ## 1.13.15 (02/02/2018)
 
 - add phone_asset

@@ -17,6 +17,17 @@ GIT
       sass-rails
 
 GIT
+  remote: git://github.com/shaneog/postgres_ext.git
+  revision: 88d46f6c145ef573e055e4d860ba2dea3264d11c
+  ref: 88d46f6c14
+  branch: rails-5
+  specs:
+    postgres_ext (3.0.0)
+      activerecord (>= 4.0.0)
+      arel (>= 4.0.1)
+      pg_array_parser (~> 0.0.9)
+
+GIT
   remote: https://github.com/bartocc/active_admin_select2.git
   revision: 2d3a570e1c369c55212d99b0a42cd3d58a2616c2
   specs:
@@ -174,6 +185,7 @@ GEM
       rake (>= 0.8.1)
     pdf-core (0.6.0)
     pg (0.17.0)
+    pg_array_parser (0.0.9)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     posix-spawn (0.3.6)
@@ -306,6 +318,7 @@ DEPENDENCIES
   newrelic_rpm
   passenger (~> 5.0.18)
   pg
+  postgres_ext!
   prawn
   pry-byebug
   pry-rails
