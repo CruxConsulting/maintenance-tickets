@@ -1,0 +1,23 @@
+{
+  "name": "Sowilo Maintenance tickets",
+  "scripts": {
+    "postdeploy":"rails db:migrate"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    },
+    "worker": {
+      "quantity": 0
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "sendgrid"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
