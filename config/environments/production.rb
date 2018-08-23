@@ -64,7 +64,7 @@ AdminAsconseilEu::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.action_mailer.default_url_options = {
-    host: ENV['ACTION_MAILER_DEFAULT_URL_HOST'] || 'admin.asconseil.eu'
+    host: ENV['ACTION_MAILER_DEFAULT_URL_HOST'] || 'admin.sowilo-network.com'
   }
 
   config.eager_load = true

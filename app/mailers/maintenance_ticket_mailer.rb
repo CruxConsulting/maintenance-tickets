@@ -5,11 +5,11 @@ class MaintenanceTicketMailer < ActionMailer::Base
   add_template_helper(MaintenanceTicketHelper)
   add_template_helper(ApplicationHelper)
 
-  default from: 'support@asconseil.eu'
+  default from: 'support@sowilo-network.com'
 
   def send_ticket_infos(ticket, recipients)
     @ticket = ticket
-    mail from: 'nepasrepondre@asconseil.eu', to: recipients, subject: send_ticket_subject
+    mail from: 'nepasrepondre@sowilo-network.com', to: recipients, subject: send_ticket_subject
   end
 
   def send_montly_report(monthly_report)
@@ -35,7 +35,7 @@ class MaintenanceTicketMailer < ActionMailer::Base
       end
 
     mail to: monthly_report.recipients,
-         bcc: 'direction@asconseil.eu',
+         bcc: 'direction@sowilo-network.com',
          subject: "Visite Mensuelle : #{monthly_report.display_name}"
   end
 
