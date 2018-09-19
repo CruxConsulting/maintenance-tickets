@@ -21,6 +21,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'prawn'
 gem 'postgres_ext', github: 'shaneog/postgres_ext', branch: 'rails-5', ref: '88d46f6c14'
+gem 'dotenv-rails'
 
 # Test gems
 ###########
