@@ -25,6 +25,10 @@ gem 'postgres_ext', github: 'shaneog/postgres_ext', branch: 'rails-5', ref: '88d
 # Test gems
 ###########
 
+group :development do
+  gem "capistrano", "~> 3.11", require: false
+end
+
 group :test, :development do
   gem 'pry-rails'
   gem 'pry-byebug'
