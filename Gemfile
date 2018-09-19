@@ -27,6 +27,8 @@ gem 'postgres_ext', github: 'shaneog/postgres_ext', branch: 'rails-5', ref: '88d
 
 group :development do
   gem "capistrano", "~> 3.11", require: false
+  gem 'capistrano-bundler', '~> 1.3'
+  gem 'capistrano-rvm'
 end
 
 group :test, :development do

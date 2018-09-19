@@ -7,6 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 server '82.64.11.235', user: 'crux', roles: %w[app db web]
+set :bundle_jobs, 4
 
 # role-based syntax
 # ==================
@@ -29,8 +30,7 @@ server '82.64.11.235', user: 'crux', roles: %w[app db web]
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
-
-
+set :bundle_jobs, 4
 
 # Custom SSH Options
 # ==================
@@ -41,7 +41,7 @@ server '82.64.11.235', user: 'crux', roles: %w[app db web]
 # Global options
 # --------------
 
-set :ssh_options, forward_agent: true
+
 #  keys: %w(/home/rlisowski/.ssh/id_rsa),
 #  auth_methods: %w(password),
 #
