@@ -5,6 +5,7 @@ set :application, 'tickets'
 set :repo_url, 'https://github.com/CruxConsulting/maintenance-tickets.git'
 set :branch, 'asconseil'
 set :ssh_options, forward_agent: true
+set :keep_assets, 2
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -23,6 +24,7 @@ set :deploy_to, '/home/crux/www/tickets'
 # set :pty, true
 
 # Default value for :linked_files is []
+# append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'public/uploads'
 append :linked_files, 'config/database.yml'
 append :linked_files, '.env'
 append :linked_files, 'Passengerfile.json'

@@ -30,6 +30,7 @@ group :development do
   gem "capistrano", "~> 3.11", require: false
   gem 'capistrano-bundler', '~> 1.3'
   gem 'capistrano-rbenv', '~> 2.1'
+  gem "capistrano-rails", "~> 1.4", require: false
 end
 
 group :test, :development do
@@ -43,6 +44,5 @@ end
 #################
 
 group :production do
-  gem 'rails_12factor'
-  gem 'rails_serve_static_assets'
+  # gem 'rails_12factor'
 end
