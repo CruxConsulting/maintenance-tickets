@@ -112,11 +112,11 @@ class MonthlyReportPDF
       # stroke_bounds
       text 'Elements fonctionnels :', style: :bold, size: 16
 
-      bounding_box([0, 70], width: 100, height: 70) do
+      bounding_box([0, 70], width: 120, height: 70) do
         # stroke_bounds
         text 'Disque durs :', style: :bold
         @monthly_report.disks.each do |disk|
-          text "Espace partition #{disk.name}", style: :bold
+          text "Partition #{disk.name}", style: :bold
         end
       end
 
