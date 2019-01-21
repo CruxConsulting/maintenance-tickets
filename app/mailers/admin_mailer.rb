@@ -5,7 +5,7 @@ class AdminMailer < ActionMailer::Base
   def assets_expire_soon
     @assets = Asset.expire_soon.includes(:client).order(expiration_date: :desc)
     mail(
-      to: 'luc.colon@sowilo-network.com',
+      to: 'direction34@sowilo-network.com',
       subject: 'Des objets arrivent bientôt à expiration'
     )
   end
