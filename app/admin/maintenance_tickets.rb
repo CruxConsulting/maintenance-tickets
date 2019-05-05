@@ -43,9 +43,6 @@ ActiveAdmin.register MaintenanceTicket do
     attributes_table do
       row :maintained_by
       row :maintenance_date
-      row :comment do |ticket|
-        simple_format ticket.comment
-      end
       row :state
       row :created_at
       row :updated_at
