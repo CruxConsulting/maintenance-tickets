@@ -10,10 +10,7 @@ class MonthlyReport < ActiveRecord::Base
   accepts_nested_attributes_for :server_asset
 
   validates_presence_of :server_asset
-
-  after_initialize do
-    self.date ||= Time.zone.today unless persisted?
-  end
+  validates_presence_of :date
 
   mount_uploader :pdf, PDFUploader
 
