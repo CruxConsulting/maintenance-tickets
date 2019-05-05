@@ -5,6 +5,7 @@ ActiveAdmin.register DomainAsset do
   filter :client
   filter :name
   filter :expiration_date
+  filter :description
 
   controller do
     def scoped_collection

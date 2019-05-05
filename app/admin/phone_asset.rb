@@ -4,6 +4,7 @@ ActiveAdmin.register PhoneAsset do
 
   filter :client
   filter :name
+  filter :description
 
   controller do
     def scoped_collection
