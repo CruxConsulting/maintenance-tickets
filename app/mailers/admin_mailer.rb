@@ -10,4 +10,26 @@ class AdminMailer < ActionMailer::Base
     )
   end
 
+  def urgent_tickets_report
+    @tickets = MaintenanceTicket.where(state: 'Ouvert - Urgent').includes(:client)
+    mail(
+      to: 'direction@asconseil.eu',
+      subject: 'Tickets état "Ouvert - Urgent"'
+    )
+  end
+
+  def open_tickets_report
+    @tickets = MaintenanceTicket.where(
+      state: [
+        'Ouvert',
+        'Ouvert - Attente client',
+        'Ouvert - Attente fournisseur',
+        'Ouvert - Urgent'
+      ]).includes(:client)
+    mail(
+      to: 'direction@asconseil.eu',
+      subject: 'Tickets état "Ouvert" (tous)'
+    )
+  end
+
 end
