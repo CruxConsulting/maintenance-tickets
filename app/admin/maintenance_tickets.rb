@@ -7,6 +7,7 @@ ActiveAdmin.register MaintenanceTicket do
 
   preserve_default_filters!
   remove_filter :assigned_to
+  filter :id, filters: [:equals]
   filter :assigned_to_array_contains, label: 'Technicien', as: :select, collection: @resource::TECH_PEOPLE
 
   # Views
