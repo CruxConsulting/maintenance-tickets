@@ -23,6 +23,9 @@ ActiveAdmin.register MaintenanceTicket do
     column :id
     column :client
     column :maintained_by
+    column :assigned_to do |e|
+      e.assigned_to.join(', ') if e.assigned_to
+    end
     column :maintenance_date
     column :description
     column :comment
