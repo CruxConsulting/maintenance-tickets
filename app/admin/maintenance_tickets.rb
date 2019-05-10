@@ -19,6 +19,23 @@ ActiveAdmin.register MaintenanceTicket do
                 notice: "Email envoyé pour le ticket #{resource.id}"
   end
 
+  csv do
+    column :id
+    column :maintained_by
+    column :comment
+    column :state
+    column :created_at
+    column :updated_at
+    column :description
+    column :duration do |resource|
+      resource.duration.to_s.gsub('.', ',')
+    end
+    column :recipients
+    column :maintenance_date
+    column :confidential_info
+    column :assigned_to
+  end
+
   index do
     column :id
     column :client
