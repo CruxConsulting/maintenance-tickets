@@ -48,7 +48,7 @@ ActiveAdmin.register Client do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :email
+      f.input :email, hint: "Liste d'emails séparés par une virgule"
       f.input :comment, input_html: { rows: 10 }
     end
 
