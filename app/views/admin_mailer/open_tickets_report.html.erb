@@ -16,7 +16,7 @@
       <td><%= ticket.client_name %></td>
       <td><%= ticket.assigned_to.join(', ') if ticket.assigned_to %></td>
       <td><%= simple_format ticket.description %></td>
-      <td><%= simple_format ticket.comments %></td>
+      <td><%= simple_format ticket.comment %></td>
       <td><%= l ticket.created_at %></td>
     </tr>
   <% end %>
