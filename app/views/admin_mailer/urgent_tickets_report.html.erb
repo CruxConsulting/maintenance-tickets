@@ -11,7 +11,7 @@
 
   <% @tickets.each do |ticket| %>
     <tr>
-      <td><%= link_to ticket.id, polymorphic_url([:admin, ticket]) %></td>
+      <td><%= link_to ticket.id, polymorphic_url([:admin, ticket], protocol: 'https') %></td>
       <td><%= ticket.client_name %></td>
       <td><%= ticket.maintained_by %></td>
       <td><%= ticket.assigned_to.join(', ') if ticket.assigned_to %></td>
