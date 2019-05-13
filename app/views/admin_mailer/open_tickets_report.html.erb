@@ -4,18 +4,20 @@
   <tr>
     <th>Numéro</th>
     <th>Client</th>
-    <th>Type d'intervention</th>
     <th>Technicien</th>
     <th>Demandes</th>
+    <th>Solutions Apportées</th>
+    <th>Créé le</th>
   </tr>
 
   <% @tickets.each do |ticket| %>
     <tr>
       <td><%= link_to ticket.id, polymorphic_url([:admin, ticket], protocol: 'https') %></td>
       <td><%= ticket.client_name %></td>
-      <td><%= ticket.maintained_by %></td>
       <td><%= ticket.assigned_to.join(', ') if ticket.assigned_to %></td>
       <td><%= simple_format ticket.description %></td>
+      <td><%= simple_format ticket.comments %></td>
+      <td><%= l ticket.created_at %></td>
     </tr>
   <% end %>
 </table>
