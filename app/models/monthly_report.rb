@@ -12,6 +12,10 @@ class MonthlyReport < ActiveRecord::Base
   validates_presence_of :server_asset
   validates_presence_of :date
 
+  after_initialize do
+    self.date ||= Time.zone.today unless persisted?
+  end
+
   mount_uploader :pdf, PDFUploader
 
   delegate :id, :name, :email, to: :client, prefix: true
