@@ -28,3 +28,22 @@ end
 task send_open_tickets_report: [:environment] do
   AdminMailer.open_tickets_report.deliver_now
 end
+
+task dup_montly_reports: [:environment] do
+  previous_date = Date.new(2019, 6)
+  new_date = Date.new(2019, 7)
+
+  reports = MonthlyReport.where(date: previous_date)
+  reports.each do |r|
+    next if r.server_asset.monthly_reports.any? {|rr| rr.date == new_date.to_s || rr.date == new_date }
+    new_r = r.dup
+    new_r.date = new_date
+    new_r.tech = "Volodia"
+    new_r.save
+    new_r.save_pdf
+
+    if false
+      MaintenanceTicketMailer.send_montly_report(new_r).deliver_now
+    end
+  end
+end
