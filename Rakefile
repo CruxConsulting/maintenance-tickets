@@ -30,10 +30,13 @@ task send_open_tickets_report: [:environment] do
 end
 
 task dup_montly_reports: [:environment] do
-  previous_date = Date.new(2019, 6)
-  new_date = Date.new(2019, 7)
+  previous_date = Date.new(2019, 7)
+  new_date = Date.new(2019, 8)
 
-  reports = MonthlyReport.where(date: previous_date)
+  reports = MonthlyReport.joins(server_asset: :client)
+    .merge(Client.where.not(name: ['FARELLA']))
+    .where(date: previous_date)
+
   reports.each do |r|
     next if r.server_asset.monthly_reports.any? {|rr| rr.date == new_date.to_s || rr.date == new_date }
     new_r = r.dup
@@ -46,4 +49,9 @@ task dup_montly_reports: [:environment] do
       MaintenanceTicketMailer.send_montly_report(new_r).deliver_now
     end
   end
+
+  # Use this to send the monthlys by hand
+  # MonthlyReport.where(date: new_date).each do |new_r|
+  #   MaintenanceTicketMailer.send_montly_report(new_r).deliver_now
+  # end
 end
