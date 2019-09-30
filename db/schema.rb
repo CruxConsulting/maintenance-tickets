@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008150501) do
+ActiveRecord::Schema.define(version: 20190930124413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,8 @@ ActiveRecord::Schema.define(version: 20151008150501) do
     t.date     "maintenance_date"
     t.text     "confidential_info"
     t.string   "assigned_to",                   default: ["Volodia"],                    array: true
+    t.boolean  "should_charge",                 default: false
+    t.text     "charge_details"
   end
 
   create_table "monthly_reports", force: :cascade do |t|

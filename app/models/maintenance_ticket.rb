@@ -32,6 +32,7 @@ class MaintenanceTicket < ActiveRecord::Base
   validates :client_id, presence: true
   validates :duration, presence: true
   validates :maintenance_date, presence: true
+  validates :charge_details, presence: true, if: Proc.new { |ticket| ticket.should_charge? }
 
   # Callbacks
   ###########

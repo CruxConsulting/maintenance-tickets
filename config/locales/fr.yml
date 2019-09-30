@@ -61,6 +61,8 @@ fr:
         assigned_to: Technicien
         duration: Durée de l'intervention
         recipients: Destinataires
+        should_charge: 'Facturation'
+        charge_details: 'Détails de facturation'
       client:
         name: Nom
         comment: Commentaires

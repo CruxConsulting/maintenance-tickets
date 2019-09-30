@@ -60,6 +60,11 @@ ActiveAdmin.register MaintenanceTicket do
       end
       row :duration
       row :recipients
+
+      row :should_charge
+      row :charge_details do |ticket|
+        simple_format ticket.charge_details
+      end
     end
   end
 
@@ -92,6 +97,8 @@ ActiveAdmin.register MaintenanceTicket do
               as: :number,
               input_html: {step: 0.5, min: 0}
       f.input :recipients, hint: "Liste d'emails séparés par une virgule"
+      f.input :should_charge, as: :select
+      f.input :charge_details, input_html: {rows: 5}
     end
 
     f.actions
