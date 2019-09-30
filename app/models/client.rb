@@ -10,7 +10,7 @@ class Client < ActiveRecord::Base
   ##############
 
   has_many :maintenance_tickets
-  has_many :assets
+  has_many :assets, dependent: :destroy
 
   # Class methods
   ###############
