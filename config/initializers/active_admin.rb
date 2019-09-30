@@ -134,7 +134,10 @@ ActiveAdmin.setup do |config|
 
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
-      menu.add label: 'Objets', priority: 1
+      menu.add label: 'Objets', priority: 1 do |objets|
+        objets.add label: "CTMs", url: "/admin/uncategorized_assets?utf8=✓&q%5Bname_contains%5D=CTM"
+        objets.add label: "Visites techniques", url: "/admin/uncategorized_assets?utf8=✓&q%5Bname_contains%5D=Visite+Technique"
+      end
     end
   end
 end
