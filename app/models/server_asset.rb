@@ -4,6 +4,8 @@ class ServerAsset < Asset
 
   accepts_nested_attributes_for :disks, allow_destroy: true
 
+  clear_validators!
+
   # Scopes
   ########
 
