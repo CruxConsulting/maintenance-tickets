@@ -2,6 +2,9 @@ fr:
 
   activerecord:
     models:
+      asset:
+        one: Objet
+        other: Tous les objets
       monthly_report:
         one: Visite mensuelle
         other: Visites mensuelles
