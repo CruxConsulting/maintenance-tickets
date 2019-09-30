@@ -1,0 +1,9 @@
+<p>
+  Les informations de facturation du
+  <%= link_to "ticket #{@ticket.id}", polymorphic_url([:admin, @ticket], :protocol => 'https') %>
+  ont été renseignées :
+</p>
+
+<p>
+  <%= simple_format @ticket.charge_details %>
+</p>

@@ -39,6 +39,7 @@ class MaintenanceTicket < ActiveRecord::Base
 
   before_save :_remove_blank_from_assigned_to
   after_save :notify
+  after_save :_send_charge_details, if: Proc.new {|ticket| ticket.should_charge? }
 
   # Instance methods
   ##################
@@ -63,6 +64,10 @@ class MaintenanceTicket < ActiveRecord::Base
   end
 
   private
+
+  def _send_charge_details
+    AdminMailer.send_charge_details(self).deliver_now
+  end
 
   def _remove_blank_from_assigned_to
     assigned_to.reject!(&:blank?)
