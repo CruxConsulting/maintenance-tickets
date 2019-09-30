@@ -3,6 +3,7 @@ ActiveAdmin.register Client do
   filter :name
   filter :email
   filter :comment
+  filter :under_contract
 
   config.sort_order = 'name_asc'
 
@@ -14,6 +15,7 @@ ActiveAdmin.register Client do
   index do
     column :name
     column :email
+    column :under_contract
     actions
   end
 
@@ -21,6 +23,11 @@ ActiveAdmin.register Client do
     attributes_table do
       row :name
       row :email
+
+      row :under_contract do |client|
+        client.under_contract? ? 'oui' : 'non'
+      end
+
       row :comment do |client|
         simple_format client.comment
       end
@@ -49,6 +56,7 @@ ActiveAdmin.register Client do
     f.inputs do
       f.input :name
       f.input :email
+      f.input :under_contract
       f.input :comment, input_html: { rows: 10 }
     end
 

@@ -69,6 +69,7 @@ fr:
         created_at: Créé le
         updated_at: Mis à jour le
         assets: "Objets"
+        under_contract: "Sous contrat"
       uncategorized_asset:
         name: Nom
         expiration_date: "Date d'expiration"
