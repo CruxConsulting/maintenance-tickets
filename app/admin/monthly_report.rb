@@ -30,7 +30,11 @@ ActiveAdmin.register MonthlyReport do
 
   member_action :save_pdf do
     resource.save_pdf
-    redirect_to resource.pdf.url
+    redirect_to admin_server_asset_monthly_report_path(
+      @monthly_report.server_asset_id,
+      @monthly_report,
+    ),
+    notice: "PDF crée"
   end
 
   member_action :send_pdf do
