@@ -4,7 +4,7 @@ gem 'rails', '~> 4.2.8'
 gem 'pg'
 gem 'haml'
 gem 'devise'
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git', :ref => 'e27ccba8a7ea'
 gem 'rails-i18n'
 gem 'remote_table'
 gem 'jquery-rails'
@@ -17,7 +17,7 @@ gem 'activeadmin_select2', git: 'https://github.com/bartocc/active_admin_select2
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'prawn'
-gem 'postgres_ext', github: 'shaneog/postgres_ext', branch: 'rails-5', ref: '88d46f6c14'
+gem 'postgres_ext', git: 'https://github.com/shaneog/postgres_ext.git', ref: '88d46f6c14'
 gem 'dotenv-rails'
 
 # Test gems
