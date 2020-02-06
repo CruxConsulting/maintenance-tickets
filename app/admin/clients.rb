@@ -14,6 +14,7 @@ ActiveAdmin.register Client do
   index do
     column :name
     column :email
+    column :under_contract
     actions
   end
 
@@ -21,6 +22,11 @@ ActiveAdmin.register Client do
     attributes_table do
       row :name
       row :email
+      row :under_contract do |client|
+        cls = client.under_contract? ? "yes" : "no"
+        label = client.under_contract? ? "Oui" : "Non"
+        status_tag label, class: cls
+      end
       row :comment do |client|
         simple_format client.comment
       end
@@ -49,6 +55,7 @@ ActiveAdmin.register Client do
     f.inputs do
       f.input :name
       f.input :email, hint: "Liste d'emails séparés par une virgule"
+      f.input :under_contract
       f.input :comment, input_html: { rows: 10 }
     end
 
