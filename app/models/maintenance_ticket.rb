@@ -47,7 +47,17 @@ class MaintenanceTicket < ActiveRecord::Base
   def notify(options = {force: false})
     return unless options[:force] == true || created_at_changed? || closed?
 
-    emails = recipients.split(',').map(&:strip) | [ENV['MAINTENANCE_TICKET_NOTIFICATION_EMAIL'], client_email].compact
+    tech_emails = {
+      "Jérome" => "direction@asconseil.eu",
+      "Paul" => "paul.loze@asconseil.eu",
+      "Damien" => "damien.lacassagne@asconseil.eu",
+      "Volodia" => "volodia.tortosa@asconseil.eu",
+      "Sylvain" => "sylvain.rigaud@asconseil.eu",
+      "Technicien" => "support@asconseil.eu"
+    }
+
+    tech_email = tech_emails[assigned_to]
+    emails = recipients.split(',').map(&:strip) | [tech_email, client_email].compact
 
     MaintenanceTicketMailer.send_ticket_infos(self, emails)
       .deliver_now unless emails.empty?
