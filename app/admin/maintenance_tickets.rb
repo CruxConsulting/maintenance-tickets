@@ -90,7 +90,9 @@ ActiveAdmin.register MaintenanceTicket do
               include_blank: false
 
       f.input :maintenance_date, as: :datepicker
-      f.input :client, as: :select, collection: Client.all.map {|c| c.name + (c.under_contract? ? " (SOUS CONTRAT)" : '')}
+      f.input :client, as: :select, collection: Client.all.map {|c|
+        [c.name + (c.under_contract? ? " (SOUS CONTRAT)" : ''), c.id]
+      }
       f.input :description, input_html: { rows: 10 }
       f.input :comment, input_html: { rows: 10 }
       f.input :confidential_info, input_html: { rows: 10 }
