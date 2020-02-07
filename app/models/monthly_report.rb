@@ -59,12 +59,7 @@ class MonthlyReport < ActiveRecord::Base
   end
 
   def additional_recipients
-    case client_name
-    when 'Sogexfo'
-      %w(gb@sogexfo.com sl@sogexfo.com sb@sogexfo.com od@sogexfo.com)
-    else
-      []
-    end
+    []
   end
 
   def recipients
