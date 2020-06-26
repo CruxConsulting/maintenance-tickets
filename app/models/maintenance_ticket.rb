@@ -57,9 +57,15 @@ class MaintenanceTicket < ActiveRecord::Base
   delegate :name, :email, to: :client, prefix: true
 
   def notify(options = {force: false})
-    return if do_not_send_email
-    return unless options[:force] == true || created_at_changed? || closed?
+    _notify and return if options[:force] == true
 
+    return if do_not_send_email
+    return unless created_at_changed? || closed?
+
+    _notify
+  end
+
+  def _notify
     tech_emails = {
       "Jérome" => "direction@asconseil.eu",
       "Paul" => "paul.loze@asconseil.eu",

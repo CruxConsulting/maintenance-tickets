@@ -17,6 +17,10 @@ ActiveAdmin.register MaintenanceTicket do
   # Views
   #######
 
+  action_item :view, only: :show do
+    link_to "Renvoi de l'email", notify_admin_maintenance_ticket_path(resource)
+  end
+
   member_action :notify do
     resource.notify force: true
     redirect_to admin_maintenance_tickets_path,
