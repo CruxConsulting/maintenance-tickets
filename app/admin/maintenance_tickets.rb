@@ -41,7 +41,6 @@ ActiveAdmin.register MaintenanceTicket do
     end
     column :recipients
     column :maintenance_date
-    column :confidential_info
     column :assigned_to
   end
 
