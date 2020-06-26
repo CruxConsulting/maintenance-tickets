@@ -116,6 +116,8 @@ ActiveAdmin.register MaintenanceTicket do
               as: :number,
               input_html: {step: 0.5, min: 0}
       f.input :recipients, hint: "Liste d'emails séparés par une virgule"
+
+      f.input :do_not_send_email, label: "Ne pas envoyer le mail", as: :boolean
     end
 
     f.actions

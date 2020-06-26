@@ -11,40 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190930131658) do
+ActiveRecord::Schema.define(version: 20200626075650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: :cascade do |t|
-    t.string   "resource_id",   null: false
-    t.string   "resource_type", null: false
+    t.string   "resource_id",   limit: 255, null: false
+    t.string   "resource_type", limit: 255, null: false
     t.integer  "author_id"
-    t.string   "author_type"
+    t.string   "author_type",   limit: 255
     t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "namespace"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "namespace",     limit: 255
   end
 
   add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_admin_notes_on_resource_type_and_resource_id", using: :btree
 
   create_table "admin_users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0
+    t.integer  "sign_in_count",                      default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "username"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "username",               limit: 255
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
@@ -64,12 +64,12 @@ ActiveRecord::Schema.define(version: 20190930131658) do
   add_index "assets", ["client_id"], name: "index_assets_on_client_id", using: :btree
 
   create_table "clients", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "name",           limit: 255
+    t.string   "email",          limit: 255
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.text     "comment"
-    t.boolean  "under_contract", default: false
+    t.boolean  "under_contract",             default: false
   end
 
   create_table "disks", force: :cascade do |t|
@@ -85,18 +85,19 @@ ActiveRecord::Schema.define(version: 20190930131658) do
   add_index "disks", ["server_asset_id"], name: "index_disks_on_server_asset_id", using: :btree
 
   create_table "maintenance_tickets", force: :cascade do |t|
-    t.string   "maintained_by"
+    t.string   "maintained_by",     limit: 255
     t.text     "comment"
-    t.string   "state",             default: "Ouvert - Urgent"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "state",                         default: "Ouvert - Urgent"
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
     t.integer  "client_id"
     t.text     "description"
-    t.string   "duration"
-    t.string   "recipients"
+    t.string   "duration",          limit: 255
+    t.string   "recipients",        limit: 255
     t.date     "maintenance_date"
     t.text     "confidential_info"
-    t.string   "assigned_to",       default: [],                array: true
+    t.string   "assigned_to",                   default: [],                             array: true
+    t.boolean  "do_not_send_email",             default: false
   end
 
   create_table "monthly_reports", force: :cascade do |t|

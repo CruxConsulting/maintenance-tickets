@@ -57,6 +57,7 @@ class MaintenanceTicket < ActiveRecord::Base
   delegate :name, :email, to: :client, prefix: true
 
   def notify(options = {force: false})
+    return if do_not_send_email
     return unless options[:force] == true || created_at_changed? || closed?
 
     tech_emails = {
