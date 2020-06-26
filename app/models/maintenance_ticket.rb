@@ -75,10 +75,10 @@ class MaintenanceTicket < ActiveRecord::Base
       "Technicien" => "support@asconseil.eu"
     }
 
-    tech_email = tech_emails[assigned_to.first]
-    emails = recipients.split(',').map(&:strip) | [tech_email, client_email].compact
+    tech_recipient = tech_emails[assigned_to.first]
+    emails = recipients.split(',').map(&:strip) | [client_email].compact
 
-    MaintenanceTicketMailer.send_ticket_infos(self, emails)
+    MaintenanceTicketMailer.send_ticket_infos(self, emails, tech_recipient)
       .deliver_now unless emails.empty?
   end
 
