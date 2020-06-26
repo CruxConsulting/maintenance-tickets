@@ -49,6 +49,16 @@ ActiveAdmin.register Client do
         end
       end
     end
+
+    panel 'Tickets ouverts' do
+      table_for resource.maintenance_tickets.not_closed.order(id: :desc) do
+        column :id do |resource|
+          link_to resource.id, admin_maintenance_ticket_path(resource)
+        end
+        column "État", :state
+        column "CRÉÉ LE", :created_at
+      end
+    end
   end
 
   form do |f|
