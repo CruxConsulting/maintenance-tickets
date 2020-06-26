@@ -1,8 +1,8 @@
 class AsConseilAuthorization < ActiveAdmin::AuthorizationAdapter
 
   def authorized?(action, subject = nil)
-    return true if user.username == "cruxx"
-    return true if (ENV["ADMINS"] || []).split(',').include? user.username
+    return true if user.username == "crux"
+    return true if (ENV["SUPER_ADMINS"] || []).split(',').include? user.username
     return true if action == :read
 
     case subject
