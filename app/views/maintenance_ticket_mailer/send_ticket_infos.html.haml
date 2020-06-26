@@ -3,9 +3,16 @@
 
 %p Bonjour #{@ticket.client_name},
 
+- if @ticket.state != "Fermé"
+  %p
+    Votre demande a bien été prise en compte sous le
+    %b « numéro #{@ticket.id} ».
+
+  %p
+    Notre équipe technique revient vers vous dans les meilleurs délais.
+
 %p
-  Vous trouverez ci-dessous un récapitulatif de l’intervention menée par
-  #{ticket_assigned_to_human(@ticket)} le #{l @ticket.maintenance_date}.
+  Vous trouverez ci-dessous un récapitulatif de votre ticket :
 
 %ul
   %li
