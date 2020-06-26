@@ -137,6 +137,8 @@ ActiveAdmin.setup do |config|
       menu.add label: 'Objets', priority: 1
     end
   end
+
+  config.authorization_adapter = "AsConseilAuthorization"
 end
 
 def set_admin_locale
