@@ -8,3 +8,19 @@
 #maintenance_ticket_duration {
   width: 180px;
 }
+
+.scope {
+  font-size: 1.3em;
+}
+
+.scopes li .count {
+  font-weight: bold;
+}
+
+.scope.urgent .count {
+  color: red;
+}
+
+.scope.ouvert .count {
+  color: orange;
+}

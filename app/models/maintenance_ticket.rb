@@ -39,6 +39,18 @@ class MaintenanceTicket < ActiveRecord::Base
   before_save :_remove_blank_from_assigned_to
   after_save :notify
 
+  scope :not_closed, -> {
+    where(arel_table[:state].matches('%Ouvert%'))
+  }
+
+  scope :urgent, -> {
+    where(state: "Ouvert - Urgent")
+  }
+
+  scope :open, -> {
+    where(state: "Ouvert")
+  }
+
   # Instance methods
   ##################
 

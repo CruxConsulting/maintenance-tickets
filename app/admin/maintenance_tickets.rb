@@ -10,6 +10,10 @@ ActiveAdmin.register MaintenanceTicket do
   filter :id, filters: [:equals]
   filter :assigned_to_array_contains, label: 'Technicien', as: :select, collection: @resource::TECH_PEOPLE
 
+  scope "Urgent", :urgent
+  scope "Ouvert", :open
+  scope "Ouvert total", :not_closed
+
   # Views
   #######
 
