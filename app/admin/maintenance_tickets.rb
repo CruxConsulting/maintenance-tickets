@@ -4,6 +4,7 @@ ActiveAdmin.register MaintenanceTicket do
   config.sort_order = 'state_desc'
 
   menu priority: 2
+  belongs_to :client, optional: true
 
   preserve_default_filters!
   remove_filter :assigned_to

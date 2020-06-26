@@ -18,6 +18,14 @@ ActiveAdmin.register Client do
     actions
   end
 
+  action_item :view, only: :show do
+    link_to "Tickets ouverts", admin_client_maintenance_tickets_path(resource, {scope: "ouvert_total"})
+  end
+
+  action_item :view, only: :show do
+    link_to "Créer ticket", new_admin_client_maintenance_ticket_path(resource)
+  end
+
   show do
     attributes_table do
       row :name
@@ -47,16 +55,6 @@ ActiveAdmin.register Client do
         column do |asset|
           link_to 'Modifier', [:edit, :admin, asset]
         end
-      end
-    end
-
-    panel 'Tickets ouverts' do
-      table_for resource.maintenance_tickets.not_closed.order(id: :desc) do
-        column :id do |resource|
-          link_to resource.id, admin_maintenance_ticket_path(resource)
-        end
-        column "État", :state
-        column "CRÉÉ LE", :created_at
       end
     end
   end
