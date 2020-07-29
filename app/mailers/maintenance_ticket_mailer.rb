@@ -35,7 +35,6 @@ class MaintenanceTicketMailer < ActionMailer::Base
       end
 
     mail to: monthly_report.recipients,
-         bcc: 'direction@asconseil.eu',
          subject: "Visite Mensuelle : #{monthly_report.display_name}"
   end
 
