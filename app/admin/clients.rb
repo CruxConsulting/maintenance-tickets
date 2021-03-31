@@ -43,7 +43,7 @@ ActiveAdmin.register Client do
           simple_format asset.description
         end
         column "Date d'expiration", :expiration_date do |asset|
-          l asset.expiration_date, format: :long
+          l asset.expiration_date, format: :long if asset.expiration_date
         end
         column do |asset|
           link_to 'Modifier', [:edit, :admin, asset]
