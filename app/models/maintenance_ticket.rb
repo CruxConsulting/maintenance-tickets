@@ -72,7 +72,8 @@ class MaintenanceTicket < ActiveRecord::Base
       "Damien" => "damien.lacassagne@asconseil.eu",
       "Volodia" => "volodia.tortosa@asconseil.eu",
       "Sylvain" => "sylvain.rigaud@asconseil.eu",
-      "Technicien" => "support@asconseil.eu"
+      "Technicien" => "support@asconseil.eu",
+      "N2" => "n2@asconseil.eu"
     }
 
     tech_recipient = tech_emails[assigned_to.first]
