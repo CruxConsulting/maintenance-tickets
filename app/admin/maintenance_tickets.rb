@@ -1,5 +1,4 @@
 ActiveAdmin.register MaintenanceTicket do
-
   config.per_page = 200
   config.sort_order = 'state_desc'
 
@@ -7,7 +6,10 @@ ActiveAdmin.register MaintenanceTicket do
 
   preserve_default_filters!
   remove_filter :assigned_to
-  filter :assigned_to_array_contains, label: 'Technicien', as: :select, collection: @resource::TECH_PEOPLE
+  filter :assigned_to_array_contains,
+         label: 'Technicien',
+         as: :select,
+         collection: MaintenanceTicket::TECH_PEOPLE
 
   # Views
   #######
@@ -70,7 +72,6 @@ ActiveAdmin.register MaintenanceTicket do
 
   form do |f|
     f.inputs do
-
       f.input :maintained_by,
               as: :select,
               collection: resource.class::MAINTAINED_BY,
@@ -89,27 +90,25 @@ ActiveAdmin.register MaintenanceTicket do
 
       f.input :assigned_to,
               as: :select,
-              input_html: {multiple: true},
+              input_html: {
+                multiple: true,
+              },
               collection: resource.class::TECH_PEOPLE,
               include_blank: false
 
-      f.input :duration,
-              as: :number,
-              input_html: {step: 0.5, min: 0}
+      f.input :duration, as: :number, input_html: { step: 0.5, min: 0 }
       f.input :recipients, hint: "Liste d'emails séparés par une virgule"
       f.input :should_charge, as: :select
-      f.input :charge_details, input_html: {rows: 5}
+      f.input :charge_details, input_html: { rows: 5 }
     end
 
     f.actions
-
   end
 
   # Controller
   ############
 
   controller do
-
     def scoped_collection
       end_of_association_chain.includes(:client)
     end
@@ -122,5 +121,4 @@ ActiveAdmin.register MaintenanceTicket do
       end
     end
   end
-
 end
