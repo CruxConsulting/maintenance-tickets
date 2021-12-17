@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.4.0'
 
-gem 'rails', '~> 4.2.0'
-gem 'pg'
+gem 'rails', '4.2.8'
+
+gem 'pg', '0.21'
 gem 'haml'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
@@ -20,14 +21,14 @@ gem 'activeadmin_select2', git: 'https://github.com/bartocc/active_admin_select2
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'prawn'
-gem 'postgres_ext', github: 'shaneog/postgres_ext', branch: 'rails-5', ref: '88d46f6c14'
+gem 'postgres_ext'#, github: 'shaneog/postgres_ext', branch: 'rails-5', ref: '88d46f6c14'
 
 # Test gems
 ###########
 
 group :test, :development do
   gem 'pry-rails'
-  gem 'pry-byebug'
+  # gem 'pry-byebug'
   gem 'awesome_print'
   gem 'spring'
 end
